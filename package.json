@@ -1,0 +1,19 @@
+{
+  "name": "@example/blog",
+  "version": "0.0.1",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "decap-cms-app": "^3.6.2"
+  },
+  "devDependencies": {
+    "@vite-pwa/astro": "^0.5.0",
+    "astro": "^5.3.0"
+  }
+}
