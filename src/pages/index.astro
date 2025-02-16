@@ -22,12 +22,6 @@ allPosts = allPosts.sort(
 
 // Full Astro Component Syntax:
 // https://docs.astro.build/core-concepts/astro-components/
-
-// redirect admin invites
-if (location.href.indexOf('#invite_token') != -1) {
-    var urlSplit = document.URL.split('#');
-    window.location = `/admin/#${urlSplit[1]}`;
-}
 ---
 
 <html lang="en">
@@ -72,6 +66,12 @@ if (location.href.indexOf('#invite_token') != -1) {
                 text-align: center;
             }
         </style>
+        <script>
+            if (location.href.indexOf('#invite_token') != -1) {
+                var urlSplit = document.URL.split('#');
+                window.location = `/admin/#${urlSplit[1]}`;
+            }
+        </script>
     </head>
 
     <body>
