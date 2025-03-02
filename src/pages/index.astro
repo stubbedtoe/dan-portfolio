@@ -68,8 +68,14 @@ allPosts = allPosts.sort(
         </style>
         <script defer async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
         <script>
-            if (location.hash.includes('recovery-token')) {
-                window.location.assign(`${location.origin}/admin${location.hash}`);
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on('init', (user) => {
+                    if (!user) {
+                        window.netlifyIdentity.on('login', () => {
+                            document.location.href = '/admin/';
+                        });
+                    }
+                });
             }
         </script>
     </head>
