@@ -1,6 +1,6 @@
 {
   ":name": "Dan Murray Portfolio",
-  ":description": "The new portfolio site for Dan Murray, portrait paninter based in Scotland",
+  ":description": "The portfolio site for Dan Murray, portrait painter based in Scotland",
   "custom-field": {
     ":description": "This example text is used as a description.",
     ":type": "line"
@@ -13,11 +13,25 @@
       ":type": "text"
     }
   },
-  "custom-list": {
+  "works": {
     ":items": {
-      "custom-list-item": {
-        ":type": "line",
-        ":description": "A desciption of the painting"
+      "painting": {
+        "title": {
+          ":type": "line",
+          ":description": "The painting's title"
+        },
+        "year": {
+          ":type": "line",
+          ":description": "The year of completion"
+        },
+        "medium": {
+          ":type": "line",
+          ":description": "The medium"
+        },
+        "dimensions": {
+          ":type": "line",
+          ":description": "The dimensions"
+        }
       }
     }
   }
