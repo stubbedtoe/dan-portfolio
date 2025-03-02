@@ -4,6 +4,7 @@ import BaseHead from '../components/BaseHead.astro';
 import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
 import { SITE } from '../config';
+import content from '../../content.json';
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -67,17 +68,6 @@ allPosts = allPosts.sort(
             }
         </style>
         <script defer async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-        <script>
-            if (window.netlifyIdentity) {
-                window.netlifyIdentity.on('init', (user) => {
-                    if (!user) {
-                        window.netlifyIdentity.on('login', () => {
-                            document.location.href = '/admin/';
-                        });
-                    }
-                });
-            }
-        </script>
     </head>
 
     <body>
@@ -91,6 +81,7 @@ allPosts = allPosts.sort(
                 <section aria-label="Blog post list">
                     {allPosts.map((p) => <BlogPostPreview post={p} />)}
                 </section>
+                <code>{content}</code>
             </main>
             <footer>
                 <a href="/admin">Admin Dashboard 🔐</a>
