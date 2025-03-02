@@ -16,6 +16,7 @@
   "works": {
     ":items": {
       "painting": {
+        ":description": "Add a work",
         "title": {
           ":type": "line",
           ":description": "The painting's title"
@@ -31,6 +32,18 @@
         "dimensions": {
           ":type": "line",
           ":description": "The dimensions"
+        },
+        "main-image": {
+          ":type": "image",
+          ":description": "Upload the main image of the painting"
+        },
+        "details": {
+          ":description": "Upload some detailed images of the painting",
+          "items": {
+            "detail": {
+              ":type": "image"
+            }
+          }
         }
       }
     }
