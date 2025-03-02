@@ -20,8 +20,8 @@
         "title": "Birdsong",
         "year": "2007",
         "medium": "mixed media",
-        "details": {
-          "items": {
+        "details": [
+          {
             "detail": {
               "provider": "uploadcare",
               "type": "image",
@@ -30,7 +30,7 @@
               "width": 3450
             }
           }
-        }
+        ]
       }
     }
   ]
