@@ -39,7 +39,7 @@
         },
         "details": {
           ":description": "Upload some detailed images of the painting",
-          "items": {
+          ":items": {
             "detail": {
               ":type": "image"
             }
