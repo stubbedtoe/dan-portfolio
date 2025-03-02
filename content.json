@@ -1,1 +1,10 @@
-{}
+{
+  "custom-list": [
+    {
+      "custom-list-item": "A nother painting"
+    },
+    {
+      "custom-list-item": "A new painting"
+    }
+  ]
+}
