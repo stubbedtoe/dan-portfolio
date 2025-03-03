@@ -29,6 +29,10 @@
           ":type": "line",
           ":description": "The medium"
         },
+        "alt-text": {
+          ":type": "line",
+          ":description": "A short description of the image for blind people"
+        },
         "dimensions": {
           ":type": "line",
           ":description": "The dimensions"
@@ -36,6 +40,10 @@
         "main-image": {
           ":type": "image",
           ":description": "Upload the main image of the painting"
+        },
+        "slug": {
+          ":type": "line",
+          ":description": "this forms part of the url for this image: eg a value of \"self-portrait\" will result in the url /works/self-portrait"
         },
         "details": {
           ":description": "Upload some detailed images of the painting",

@@ -10,7 +10,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "decap-cms-app": "^3.6.2"
+    "@unpic/astro": "^1.0.0",
+    "unpic": "^4.1.2"
   },
   "devDependencies": {
     "@vite-pwa/astro": "^0.5.0",

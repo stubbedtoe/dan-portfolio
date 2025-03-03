@@ -5,6 +5,8 @@ import BlogHeader from '../components/BlogHeader.astro';
 import BlogPostPreview from '../components/BlogPostPreview.astro';
 import { SITE } from '../config';
 import content from '../../content.json';
+import { Image } from 'astro:assets';
+import { transform } from 'unpic/providers/uploadcare';
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -13,8 +15,6 @@ import content from '../../content.json';
 let { title } = SITE;
 let description = 'The perfect starter for your perfect blog.';
 let permalink = 'https://example.com/';
-
-console.log(content);
 
 // Data Fetching: List all Markdown posts in the repo.
 
@@ -69,7 +69,6 @@ allPosts = allPosts.sort(
                 text-align: center;
             }
         </style>
-        <script defer async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </head>
 
     <body>
@@ -83,7 +82,26 @@ allPosts = allPosts.sort(
                 <section aria-label="Blog post list">
                     {allPosts.map((p) => <BlogPostPreview post={p} />)}
                 </section>
-                <code>{content}</code>
+                {
+                    content.works.map((painting) => (
+                        <Image
+                            src={`https://ucarecdn.com/${painting['main-image'].id}`}
+                            alt={''}
+                            width={painting['main-image'].width}
+                            height={painting['main-image'].height}
+                            options={{
+                                uploadcare: {
+                                    // uploadcare options here
+                                },
+                            }}
+                            operations={{
+                                uploadcare: {
+                                    // uploadcare operations here
+                                },
+                            }}
+                        />
+                    ))
+                }
             </main>
             <footer>
                 <a href="/admin">Admin Dashboard 🔐</a>
