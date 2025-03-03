@@ -73,7 +73,7 @@ let permalink = 'https://example.com/';
                     <p>{description}</p>
                 </section>
                 {
-                    content.works.map((painting) => (
+                    content.works.map(({ painting }) => (
                         <Image
                             src={`https://ucarecdn.com/${painting['main-image'].id}`}
                             alt={''}
