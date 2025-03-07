@@ -2,7 +2,7 @@ media:
   input: "src/images"
   output: "/images"
 content:
-  - name: "works"
+  - name: "Works"
     path: "content/portfolio.json"
     type: "file"
     list: true
@@ -11,6 +11,32 @@ content:
         type: "string"
         label: "Title"
         required: true
+      - name: "medium"
+        type: "string"
+        label: "Medium"
+        required: true
+        default: "Acrylic on canvas"
+      - name: "dimensions"
+        type: "object"
+        description: "in centimetres"
+        fields:
+          - name: "width"
+            type: "number"
+            label: "Width"
+            required: true
+          - name: "height"
+            type: "number"
+            label: "Height"
+            required: true
+      - name: "year"
+        type: "date"
+        label: "year"
+        required: true
+      - name: "image"
+        type: "image"
+        label: "Image"
+        required: true
+      
         
     
     
