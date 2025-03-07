@@ -1,3 +1,16 @@
 media:
   input: "src/images"
   output: "/images"
+content:
+  - name: "works"
+    path: "content/portfolio.json"
+    type: "file"
+    list: true
+    fields:
+      - name: "title"
+        type: "string"
+        label: "Title"
+        required: true
+        
+    
+    
