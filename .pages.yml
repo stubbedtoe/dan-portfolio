@@ -3,7 +3,7 @@ media:
   output: "/images"
 content:
   - name: "Works"
-    path: "content/portfolio.json"
+    path: "src/content/portfolio.json"
     type: "file"
     list: true
     fields:
@@ -16,7 +16,7 @@ content:
         label: "Medium"
         required: true
         default: "Acrylic on canvas"
-      - name: "dimensions"
+      - name: "Dimensions"
         type: "object"
         description: "in centimetres"
         fields:
