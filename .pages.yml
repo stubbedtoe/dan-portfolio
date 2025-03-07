@@ -18,18 +18,20 @@ content:
         default: "Acrylic on canvas"
       - name: "Dimensions"
         type: "object"
-        description: "in centimetres"
         fields:
           - name: "width"
             type: "number"
+            description: "in centimetres"
             label: "Width"
             required: true
           - name: "height"
             type: "number"
+            description: "in centimetres"
             label: "Height"
             required: true
       - name: "year"
         type: "date"
+        description: "Don't worry about the day and month, just the year it was finished"
         label: "Year"
         required: true
       - name: "image"
