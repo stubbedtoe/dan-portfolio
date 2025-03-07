@@ -1,0 +1,11 @@
+---
+import { Image } from 'astro:assets';
+import { MarkdownInstance } from 'astro';
+const works = Object.values(import.meta.glob('../content/works/*.md', { eager: true })) as MarkdownInstance<{
+    image: string;
+}>[];
+---
+
+<div>
+    {works.map((work) => <Image src={work.frontmatter.image} alt="" width={2000} height={3000} />)}
+</div>
