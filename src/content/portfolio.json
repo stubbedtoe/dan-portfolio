@@ -1,5 +1,15 @@
 [
   {
+    "title": "Andrew Seated",
+    "medium": "Acrylic on board",
+    "Dimensions": {
+      "width": 120,
+      "height": 120
+    },
+    "year": "2023-06-07",
+    "image": "/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg"
+  },
+  {
     "title": "Alan with Manson",
     "medium": "Acrylic on board",
     "Dimensions": {
@@ -10,13 +20,13 @@
     "image": "/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG"
   },
   {
-    "title": "Andrew Seated",
+    "title": "Eleaine",
     "medium": "Acrylic on board",
     "Dimensions": {
-      "width": 120,
-      "height": 120
+      "width": 45,
+      "height": 65
     },
-    "year": "2023-06-07",
-    "image": "/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg"
+    "year": "2020-06-09",
+    "image": "/images/Eleaine - Acrylic on Board - 45cm x 65cm - 2020.JPG"
   }
 ]
