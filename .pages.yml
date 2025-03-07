@@ -15,7 +15,7 @@ content:
         type: "string"
         label: "Medium"
         required: true
-        default: "Acrylic on canvas"
+        default: "Acrylic on board"
       - name: "Dimensions"
         type: "object"
         fields:
