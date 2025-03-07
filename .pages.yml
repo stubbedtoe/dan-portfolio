@@ -30,7 +30,7 @@ content:
             required: true
       - name: "year"
         type: "date"
-        label: "year"
+        label: "Year"
         required: true
       - name: "image"
         type: "image"
