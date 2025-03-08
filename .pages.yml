@@ -34,6 +34,11 @@ content:
         description: "Don't worry about the day and month, just the year it was finished"
         label: "Year"
         required: true
+      - name: "alt"
+        type: "string"
+        description: "Provide a description of the image for people with impaired sight"
+        label: "Alt text"
+        required: true
       - name: "image"
         type: "image"
         label: "Image"
