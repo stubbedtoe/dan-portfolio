@@ -43,14 +43,31 @@ content:
         type: "image"
         label: "Image"
         required: true
-  - name: "commonContent"
-    label: "Common Content"
-    path: "src/content/commonContent.json"
+  - name: "Homepage"
+    path: "src/content/homepage.md"
     type: "file"
     fields:
       - name: "title"
         type: "string"
         label: "Title"
+      - name: "socials"
+        type: "object"
+        label: "Social media links"
+        list: true
+        fields:
+          - name: "website"
+            type: "select"
+            label: "Website"
+            required: true
+            options:
+              values: [Facebook, Instagram, X, LinkedIn, Pinterest]
+          - name: "url"
+            type: "string"
+            label: "Url"
+            required: true
+          
+        
+        
         
     
     
