@@ -43,7 +43,15 @@ content:
         type: "image"
         label: "Image"
         required: true
-      
+  - name: "siteSettings"
+    label: "Site settings"
+    path: "src/content/siteSettings.json"
+    type: "file"
+    fields:
+      - name: "title"
+        type: "string"
+        label: "Title"
+        required: true
         
     
     
