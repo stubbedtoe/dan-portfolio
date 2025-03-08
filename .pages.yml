@@ -51,7 +51,6 @@ content:
       - name: "title"
         type: "string"
         label: "Title"
-        required: true
         
     
     
