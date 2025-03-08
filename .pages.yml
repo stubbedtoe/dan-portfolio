@@ -1,6 +1,6 @@
 media:
   input: "src/images"
-  output: "/images"
+  output: "src/images"
 content:
   - name: "Works"
     path: "src/content/portfolio.json"
