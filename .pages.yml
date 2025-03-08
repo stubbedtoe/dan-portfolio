@@ -44,7 +44,7 @@ content:
         label: "Image"
         required: true
   - name: "Homepage"
-    path: "src/content/homepage.md"
+    path: "src/content/homepage.json"
     type: "file"
     fields:
       - name: "title"
