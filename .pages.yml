@@ -50,6 +50,7 @@ content:
       - name: "title"
         type: "string"
         label: "Title"
+        required: true
       - name: "socials"
         type: "object"
         label: "Social media links"
@@ -65,6 +66,11 @@ content:
             type: "string"
             label: "Url"
             required: true
+      - name: "intro"
+        type: "rich-text"
+        label: "Introductory text"
+        description: "To be shown only on the homepage"
+        
           
         
         
