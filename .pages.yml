@@ -50,7 +50,6 @@ content:
       - name: "title"
         type: "string"
         label: "Title"
-        required: true
       - name: "socials"
         type: "object"
         label: "Social media links"
