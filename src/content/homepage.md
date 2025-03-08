@@ -5,4 +5,8 @@ socials:
     url: https://www.facebook.com/danielmurrayartist
   - website: Instagram
     url: https://www.instagram.com/danmurrayartist/
+intro: Daniel Murray is a portrait and figurative artist from the North-West
+  Highlands of Scotland. In 2018 he won the prestigious Scottish Portrait Award
+  for his painting Jané Seated. Working mostly in acrylics on board, he
+  currently works from his studio at the Drill Hall in Leith, Edinburgh.
 ---
