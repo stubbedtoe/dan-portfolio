@@ -28,6 +28,15 @@ const title = `${homepage.title} | ${painting.data.title}`;
     <BlogHeader />
     <main>
         <h1>{painting.data.title}</h1>
-        <Image inferSize={true} src={painting.data.image} alt={painting.data.alt} priority background="blurhash" />
+        <Image
+            inferSize={true}
+            src={painting.data.image}
+            alt={painting.data.alt}
+            widths={[200, 600, 1200]}
+            priority={true}
+            fit="contain"
+            background="blurhash"
+            layout="full-width"
+        />
     </main>
 </body>
