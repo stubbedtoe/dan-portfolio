@@ -1,6 +1,7 @@
 [
   {
     "title": "Andrew Seated",
+    "id": "andrew-seated",
     "medium": "Acrylic on board",
     "Dimensions": {
       "width": 120,
@@ -12,6 +13,7 @@
   },
   {
     "title": "Alan with Manson",
+    "id": "alan-with-mason",
     "medium": "Acrylic on board",
     "Dimensions": {
       "width": 84,
@@ -23,6 +25,7 @@
   },
   {
     "title": "Eleaine",
+    "id": "eleaine",
     "medium": "Acrylic on board",
     "Dimensions": {
       "width": 45,
@@ -34,6 +37,7 @@
   },
   {
     "title": "Jané Seated",
+    "id": "jane-seated",
     "medium": "Acrylic on board",
     "Dimensions": {
       "width": 84,
