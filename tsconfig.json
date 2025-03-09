@@ -12,5 +12,7 @@
     // Add type definitions for our Vite runtime.
     "types": ["vite/client"],
     "allowSyntheticDefaultImports": true,
+    "strictNullChecks": true,
+    "allowJs": true // required, and included with all Astro templates
   },
 }
