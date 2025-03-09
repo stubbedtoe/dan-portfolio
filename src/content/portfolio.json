@@ -8,7 +8,7 @@
     },
     "year": "2023-06-07",
     "alt": "A man seated looking to the side with his head resting in his hand",
-    "image": "src/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg"
+    "image": "/src/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg"
   },
   {
     "title": "Alan with Manson",
@@ -19,7 +19,7 @@
     },
     "year": "2018-06-07",
     "alt": "A man with long hair with his hand resting on the black and white do beside him. Both subjects are looking forward.",
-    "image": "src/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG"
+    "image": "/src/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG"
   },
   {
     "title": "Eleaine",
@@ -30,7 +30,7 @@
     },
     "year": "2020-06-09",
     "alt": "A smiling red-haired woman with glasses in a blue NHS nurse's uniform looking straight ahead.",
-    "image": "src/images/Eleaine - Acrylic on Board - 45cm x 65cm - 2020.JPG"
+    "image": "/src/images/Eleaine - Acrylic on Board - 45cm x 65cm - 2020.JPG"
   },
   {
     "title": "Jané Seated",
@@ -41,6 +41,6 @@
     },
     "year": "2018-06-06",
     "alt": "A young woman sitting cross-legged looking upwards. The background is an abstract landscape",
-    "image": "/src/images/Jané Seated 2018 Acrylics on board 84cm x 135cm.JPG"
+    "image": "/src/images/Jane Seated 2018 Acrylics on board 84cm x 135cm.JPG"
   }
 ]

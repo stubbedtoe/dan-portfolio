@@ -1,78 +1,71 @@
 media:
-  input: "src/images"
-  output: "src/images"
+    input: 'src/images'
+    output: '/src/images'
 content:
-  - name: "Works"
-    path: "src/content/portfolio.json"
-    type: "file"
-    list: true
-    fields:
-      - name: "title"
-        type: "string"
-        label: "Title"
-        required: true
-      - name: "medium"
-        type: "string"
-        label: "Medium"
-        required: true
-        default: "Acrylic on board"
-      - name: "Dimensions"
-        type: "object"
-        fields:
-          - name: "width"
-            type: "number"
-            description: "in centimetres"
-            label: "Width"
+    - name: 'Works'
+      path: 'src/content/portfolio.json'
+      type: 'file'
+      list: true
+      fields:
+          - name: 'title'
+            type: 'string'
+            label: 'Title'
             required: true
-          - name: "height"
-            type: "number"
-            description: "in centimetres"
-            label: "Height"
+          - name: 'medium'
+            type: 'string'
+            label: 'Medium'
             required: true
-      - name: "year"
-        type: "date"
-        description: "Don't worry about the day and month, just the year it was finished"
-        label: "Year"
-        required: true
-      - name: "alt"
-        type: "string"
-        description: "Provide a description of the image for people with impaired sight"
-        label: "Alt text"
-        required: true
-      - name: "image"
-        type: "image"
-        label: "Image"
-        required: true
-  - name: "Homepage"
-    path: "src/content/homepage.json"
-    type: "file"
-    fields:
-      - name: "title"
-        type: "string"
-        label: "Title"
-      - name: "socials"
-        type: "object"
-        label: "Social media links"
-        list: true
-        fields:
-          - name: "website"
-            type: "select"
-            label: "Website"
+            default: 'Acrylic on board'
+          - name: 'Dimensions'
+            type: 'object'
+            fields:
+                - name: 'width'
+                  type: 'number'
+                  description: 'in centimetres'
+                  label: 'Width'
+                  required: true
+                - name: 'height'
+                  type: 'number'
+                  description: 'in centimetres'
+                  label: 'Height'
+                  required: true
+          - name: 'year'
+            type: 'date'
+            description: "Don't worry about the day and month, just the year it was finished"
+            label: 'Year'
             required: true
-            options:
-              values: [Facebook, Instagram, X, LinkedIn, Pinterest]
-          - name: "url"
-            type: "string"
-            label: "Url"
+          - name: 'alt'
+            type: 'string'
+            description: 'Provide a description of the image for people with impaired sight'
+            label: 'Alt text'
             required: true
-      - name: "intro"
-        type: "rich-text"
-        label: "Introductory text"
-        description: "To be shown only on the homepage"
-        
-          
-        
-        
-        
-    
-    
+          - name: 'image'
+            type: 'image'
+            label: 'Image'
+            required: true
+    - name: 'Homepage'
+      path: 'src/content/homepage.json'
+      type: 'file'
+      fields:
+          - name: 'title'
+            type: 'string'
+            label: 'Title'
+          - name: 'socials'
+            type: 'object'
+            label: 'Social media links'
+            list: true
+            fields:
+                - name: 'website'
+                  type: 'select'
+                  label: 'Website'
+                  required: true
+                  options:
+                      values: [Facebook, Instagram, X, LinkedIn, Pinterest]
+                - name: 'url'
+                  type: 'string'
+                  label: 'Url'
+                  required: true
+          - name: 'intro'
+            type: 'rich-text'
+            label: 'Introductory text'
+            description: 'To be shown only on the homepage'

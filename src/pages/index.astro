@@ -77,11 +77,11 @@ console.log(images);
                 </section>
                 {
                     portfolio.map((painting) =>
-                        !images[painting.image] ? (
-                            console.error(`"${painting.image}" does not exist in glob: "src/images/*"`)
+                        !images[`${painting.image}`] ? (
+                            console.error(`"${painting.image}" does not exist in glob: "/src/images/*"`)
                         ) : (
                             <Image
-                                src={images[painting.image]()}
+                                src={images[`${painting.image}`]()}
                                 alt={painting.alt}
                                 width={painting.Dimensions.width}
                                 height={painting.Dimensions.height}
