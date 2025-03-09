@@ -82,5 +82,29 @@
     "year": "2025-03-07",
     "alt": "Close up of a woman's face. She is looking at something out of frame to the upper right.",
     "image": "/src/images/Mum in the afternoon light - Acrylic on Board -  23cm x 30cm - 2025.jpg"
+  },
+  {
+    "title": "Nude Self Portrait",
+    "id": "nude-self-portrait",
+    "medium": "Acrylic on board",
+    "Dimensions": {
+      "width": 81,
+      "height": 170
+    },
+    "year": "2022-06-08",
+    "alt": "A nude man standing and looking upwards. The light is coming from above.",
+    "image": "/src/images/Nude self portrait - Acrylic on Board -  81cm x 170cm - 2022.jpg"
+  },
+  {
+    "title": "Self Portrait at Firemore",
+    "id": "self-portrait-at-firemore",
+    "medium": "Acrylic on board",
+    "Dimensions": {
+      "width": 60,
+      "height": 70
+    },
+    "year": "2023-10-10",
+    "alt": "Head and shoulders of a man with his hair tied back. He does not have and closes on. The background is a dark landscape.",
+    "image": "/src/images/Self-Portrait at Firemore- Acrylic on Board - 60cm x 70cm - 2023.jpg"
   }
 ]
