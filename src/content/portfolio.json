@@ -58,5 +58,29 @@
     "year": "2021-06-09",
     "alt": "A man and a woman embracing. The man has a tattoo on his arm and the woman is heavily pregnant.",
     "image": "/src/images/John and Lyndsay Todd - Acrylic on Board - 91cm x  120cm - 2021.jpg"
+  },
+  {
+    "title": "Mum in 6 Naast with a View to Sron Dubh",
+    "id": "mum-in-6-naast-with-a-view-to-sron-dubh",
+    "medium": "Acrylic on board",
+    "Dimensions": {
+      "width": 98,
+      "height": 170
+    },
+    "year": "2021-06-09",
+    "alt": "Woman sitting with her hands on her lap in a garden with a mountain silhouette in the background",
+    "image": "/src/images/Mum in 6 Naast with view to Sron Dubh - Acrylic on Board - 98cm x 170cm - 2021.jpg"
+  },
+  {
+    "title": "Mum in the Afternoon Light",
+    "id": "mum-in-the-afternoon-light",
+    "medium": "Acrylic on board",
+    "Dimensions": {
+      "width": 23,
+      "height": 30
+    },
+    "year": "2025-03-07",
+    "alt": "Close up of a woman's face. She is looking at something out of frame to the upper right.",
+    "image": "/src/images/Mum in the afternoon light - Acrylic on Board -  23cm x 30cm - 2025.jpg"
   }
 ]
