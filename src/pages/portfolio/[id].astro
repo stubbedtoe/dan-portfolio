@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from '@unpic/astro';
+import { Image } from 'astro:assets';
 import homepage from '../../content/homepage.json';
 import BlogHeader from '../../components/BlogHeader.astro';
 import BaseHead from '../../components/BaseHead.astro';
@@ -17,11 +17,17 @@ const { painting } = Astro.props;
 const title = `${homepage.title} | ${painting.data.title}`;
 ---
 
-<head><BaseHead {title} description={homepage.intro} permalink={`/portfolio/${painting.id}`} /></head>
+<head
+    ><BaseHead
+        {title}
+        description={homepage.intro}
+        permalink={`https://dan-murray-portfolio/portfolio/${painting.id}`}
+    /></head
+>
 <body>
     <BlogHeader />
     <main>
         <h1>{painting.data.title}</h1>
-        <Image src={painting.data.image} alt={painting.data.alt} layout="constrained" priority />
+        <Image inferSize={true} src={painting.data.image} alt={painting.data.alt} priority background="blurhash" />
     </main>
 </body>

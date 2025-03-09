@@ -10,6 +10,7 @@
     "preview": "astro preview"
   },
   "dependencies": {
+    "@playform/compress": "^0.1.7",
     "@unpic/astro": "^1.0.0",
     "unpic": "^4.1.2"
   },
