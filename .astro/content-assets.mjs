@@ -1,1 +1,7 @@
-export default new Map();
+
+import __ASTRO_IMAGE_IMPORT_Z2vgfLz from "/src/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fportfolio.json";
+import __ASTRO_IMAGE_IMPORT_1EunyO from "/src/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG?astroContentImageFlag=&importer=src%2Fcontent%2Fportfolio.json";
+import __ASTRO_IMAGE_IMPORT_6nST9 from "/src/images/Eleaine - Acrylic on Board - 45cm x 65cm - 2020.JPG?astroContentImageFlag=&importer=src%2Fcontent%2Fportfolio.json";
+import __ASTRO_IMAGE_IMPORT_Z1D1O0h from "/src/images/Jane Seated 2018 Acrylics on board 84cm x 135cm.JPG?astroContentImageFlag=&importer=src%2Fcontent%2Fportfolio.json";
+export default new Map([["/src/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg?astroContentImageFlag=&importer=src%2Fcontent%2Fportfolio.json", __ASTRO_IMAGE_IMPORT_Z2vgfLz], ["/src/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG?astroContentImageFlag=&importer=src%2Fcontent%2Fportfolio.json", __ASTRO_IMAGE_IMPORT_1EunyO], ["/src/images/Eleaine - Acrylic on Board - 45cm x 65cm - 2020.JPG?astroContentImageFlag=&importer=src%2Fcontent%2Fportfolio.json", __ASTRO_IMAGE_IMPORT_6nST9], ["/src/images/Jane Seated 2018 Acrylics on board 84cm x 135cm.JPG?astroContentImageFlag=&importer=src%2Fcontent%2Fportfolio.json", __ASTRO_IMAGE_IMPORT_Z1D1O0h]]);
+		

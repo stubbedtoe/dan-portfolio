@@ -151,7 +151,7 @@ declare module 'astro:content' {
   id: string;
   body?: string;
   collection: "portfolio";
-  data: any;
+  data: InferEntrySchema<"portfolio">;
   rendered?: RenderedContent;
   filePath?: string;
 }>;
@@ -160,5 +160,5 @@ declare module 'astro:content' {
 
 	type AnyEntryMap = ContentEntryMap & DataEntryMap;
 
-	export type ContentConfig = typeof import("../src/content.config.js");
+	export type ContentConfig = typeof import("../src/content.config.mts");
 }

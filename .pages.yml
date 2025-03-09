@@ -15,7 +15,11 @@ content:
             type: 'string'
             label: 'Slug'
             description: 'This is the url that will be created. It should be unique. Probably best to use the title: make it all lower case and replace spaces with dashes.'
-            pattern: { regex: '[a-z0-9]+(?:-[a-z0-9]+)*',  message: 'Invalid format: make the title all lower case and replace spaces with dashes'}
+            pattern:
+                {
+                    regex: '[a-z0-9]+(?:-[a-z0-9]+)*',
+                    message: 'Invalid format: make the title all lower case and replace spaces with dashes',
+                }
             required: true
           - name: 'medium'
             type: 'string'
