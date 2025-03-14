@@ -15,7 +15,22 @@ export async function getStaticPaths() {
 // 2. For your template, you can get the entry directly from the prop
 const { painting } = Astro.props;
 const title = `${homepage.title} | ${painting.data.title}`;
+const year = new Date(painting.data.year).getFullYear();
 ---
+
+<style>
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1rem;
+        display: flex;
+    }
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 550px;
+    }
+</style>
 
 <head lang="en"
     ><BaseHead
@@ -28,15 +43,26 @@ const title = `${homepage.title} | ${painting.data.title}`;
     <BlogHeader />
     <main>
         <h1>{painting.data.title}</h1>
-        <Image
-            inferSize={true}
-            src={painting.data.image}
-            alt={painting.data.alt}
-            widths={[200, 600, 1200]}
-            priority={true}
-            fit="contain"
-            background="blurhash"
-            layout="full-width"
-        />
+        <div class="container">    
+            <Image
+                inferSize={true}
+                src={painting.data.image}
+                alt={painting.data.alt}
+                widths={[200, 600, 1200]}
+                priority={true}
+                fit="contain"
+                background="blurhash"
+                layout="full-width"
+            />
+            <p>
+                <strong>{painting.data.title}</strong>
+                <br />
+                <em>{painting.data.medium}</em>
+                <br />
+                {painting.data.Dimensions.width} x {painting.data.Dimensions.height} cm
+                <br />
+                {year}
+            </p>
+        </div>
     </main>
 </body>
