@@ -1,3 +1,3 @@
 export const SITE = {
-    title: 'Daniel Murray | Portrait Painter',
+    title: 'Daniel Murray',
 };

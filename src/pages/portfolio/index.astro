@@ -1,0 +1,48 @@
+---
+import { getCollection } from 'astro:content';
+import BaseHead from '../../components/BaseHead.astro';
+import Nav from '../../components/Nav.astro';
+import { Image } from 'astro:assets';
+import Container from '../../components/Container.astro';
+import Footer from '../../components/Footer.astro';
+
+const works = await getCollection('portfolio');
+---
+
+<style>
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    img {
+        height: auto;
+        aspect-ratio: 1;
+    }
+</style>
+
+<head lang="en">
+    <BaseHead title="Portfolio" permalink="/portfolio" description="portfolio" />
+</head>
+<body>
+    <Nav />
+    <Container>
+        <main class="xs:columns-1 sm:columns-2 md:columns-4 gap-x-4 gap-y-4">
+            {
+                works.map(({ data }, index) => (
+                    <a href={`/portfolio/${data.id}`} class="aspect-square">
+                        <Image
+                            src={data.image}
+                            alt={data.alt}
+                            priority={index < 6}
+                            layout="full-width"
+                            background="blurhash"
+                            fit="cover"
+                            class="mb-4"
+                        />
+                    </a>
+                ))
+            }
+        </main>
+    </Container>
+    <Footer />
+</body>

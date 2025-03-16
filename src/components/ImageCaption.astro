@@ -1,0 +1,55 @@
+---
+interface Props {
+    title: string;
+    medium: string;
+    Dimensions: {
+        width: number;
+        height: number;
+    };
+    year: string;
+    links?: {
+        previous: string;
+        next: string;
+    };
+}
+
+const {
+    title,
+    medium,
+    Dimensions: { width, height },
+    year,
+    links,
+} = Astro.props;
+
+const fullyear = new Date(year).getFullYear();
+---
+
+<style>
+    .links {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 1rem;
+    }
+    .caption {
+        display: flex;
+        flex-direction: column;
+        max-width: 200px;
+        margin-top: 1rem;
+        line-height: 1.5rem;
+    }
+</style>
+
+<div class="caption">
+    <strong>{title}</strong>
+    <em>{medium}</em>
+    {width} x {height} cm
+    {fullyear}
+    {
+        links && (
+            <div class="links">
+                <a href={links.previous}>Previous</a>
+                <a href={links.next}>Next</a>
+            </div>
+        )
+    }
+</div>

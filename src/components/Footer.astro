@@ -1,0 +1,29 @@
+---
+import Container from './Container.astro';
+import content from '../content/homepage.json';
+---
+
+<footer>
+    <Container>
+        <ul>
+            {
+                content.socials.map((social) => (
+                    <li>
+                        <a href={social.url} target="_blank" rel="nofollow noreferrer">
+                            {social.website}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </Container>
+</footer>
+
+<style>
+    footer {
+        width: 100%;
+        background-color: aliceblue;
+        padding: 2rem 0;
+        margin-top: 3rem;
+    }
+</style>
