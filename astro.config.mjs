@@ -23,5 +23,5 @@ export default defineConfig({
         plugins: [tailwindcss()],
     },
 
-    site: 'https://dan-murray-portfolio.netlify.com',
+    site: 'https://dan-murray-portfolio.netlify.app',
 });
