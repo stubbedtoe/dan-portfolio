@@ -29,49 +29,50 @@ const title = `${homepage.title} | ${painting.data.title}`;
 const year = new Date(painting.data.year).getFullYear();
 ---
 
-<style>
-    .container {
-        max-width: 800px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-    }
-    img {
-        width: 100%;
-        height: auto;
-        max-width: 550px;
-    }
-</style>
-
-<head lang="en"
-    ><BaseHead
-        {title}
-        description={homepage.intro}
-        permalink={`https://dan-murray-portfolio/portfolio/${painting.id}`}
-    /></head
->
-<body class="h-screen">
-    <Nav />
-    <Container>
-        <main class="container">
-            <Image
-                inferSize={true}
-                src={painting.data.image}
-                alt={painting.data.alt}
-                widths={[200, 600, 1200]}
-                priority={true}
-                fit="contain"
-                background="blurhash"
-                layout="full-width"
-            />
-            <ImageCaption
-                title={painting.data.title}
-                medium={painting.data.medium}
-                Dimensions={painting.data.Dimensions}
-                year={painting.data.year}
-                links={{ previous, next }}
-            />
-        </main>
-    </Container>
-    <Footer />
-</body>
+<html lang="en">
+    <head>
+        <BaseHead
+            {title}
+            description={homepage.intro}
+            permalink={`https://dan-murray-portfolio/portfolio/${painting.id}`}
+        />
+        <style>
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                display: flex;
+                justify-content: space-between;
+            }
+            img {
+                width: 100%;
+                height: auto;
+                max-width: 550px;
+            }
+        </style>
+    </head>
+    <body class="h-screen">
+        <Nav />
+        <Container>
+            <main class="container">
+                <Image
+                    inferSize={true}
+                    src={painting.data.image}
+                    alt={painting.data.alt}
+                    widths={[200, 600, 1200]}
+                    priority={true}
+                    fit="contain"
+                    background="blurhash"
+                    layout="full-width"
+                />
+                <ImageCaption
+                    title={painting.data.title}
+                    medium={painting.data.medium}
+                    Dimensions={painting.data.Dimensions}
+                    year={painting.data.year}
+                    links={{ previous, next }}
+                />
+            </main>
+        </Container>
+        <Footer />
+    </body>
+</html>

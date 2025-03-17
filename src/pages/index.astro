@@ -26,15 +26,14 @@ const [homePageImage, _] = await getCollection('portfolio');
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<style>
-    img {
-        width: 50%;
-    }
-</style>
-
 <html lang="en">
     <head>
         <BaseHead {title} {description} {permalink} />
+        <style>
+            img {
+                width: 50%;
+            }
+        </style>
     </head>
     <body>
         <Nav />
