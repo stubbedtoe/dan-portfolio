@@ -1,4 +1,6 @@
 ---
+import ArrowLeft from '../assets/images/arrow-left.svg';
+
 interface Props {
     title: string;
     medium: string;
@@ -7,6 +9,7 @@ interface Props {
         height: number;
     };
     year: string;
+    className?: string;
     links?: {
         previous: string;
         next: string;
@@ -19,6 +22,7 @@ const {
     Dimensions: { width, height },
     year,
     links,
+    className,
 } = Astro.props;
 
 const fullyear = new Date(year).getFullYear();
@@ -29,26 +33,36 @@ const fullyear = new Date(year).getFullYear();
         display: flex;
         justify-content: space-between;
         margin-top: 1rem;
+        max-width: 200px;
     }
     .caption {
         display: flex;
         flex-direction: column;
-        max-width: 200px;
-        margin-top: 1rem;
+
+        /* margin-top: 1rem; */
         line-height: 1.5rem;
+    }
+
+    .right {
+        transform: rotate(180deg);
     }
 </style>
 
-<div class="caption">
-    <strong>{title}</strong>
-    <em>{medium}</em>
+<div class={`caption ${className || ''}`}>
+    <h3>
+        <span class="font-bold">{title}</span>, {fullyear}
+    </h3>
+    <span class="">{medium}</span>
     {width} x {height} cm
-    {fullyear}
     {
         links && (
             <div class="links">
-                <a href={links.previous}>Previous</a>
-                <a href={links.next}>Next</a>
+                <a href={links.previous} title="Previous">
+                    <ArrowLeft class="stroke-gray-500 hover:stroke-amber-900" width="auto" height="1.5rem" />
+                </a>
+                <a href={links.next} title="Next">
+                    <ArrowLeft class="right stroke-gray-500 hover:stroke-amber-900" width="auto" height="1.5rem" />
+                </a>
             </div>
         )
     }

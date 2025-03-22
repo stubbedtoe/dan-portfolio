@@ -1,49 +1,38 @@
 ---
 import { getCollection } from 'astro:content';
-import BaseHead from '../../components/BaseHead.astro';
-import Nav from '../../components/Nav.astro';
 import { Image } from 'astro:assets';
-import Container from '../../components/Container.astro';
-import Footer from '../../components/Footer.astro';
+import Page from '../../layouts/Page.astro';
 
 const works = await getCollection('portfolio');
 ---
 
-<html lang="en">
-    <head>
-        <BaseHead title="Portfolio" permalink="/portfolio" description="portfolio" />
-        <style>
-            .container {
-                display: flex;
-                flex-wrap: wrap;
-            }
-            img {
-                height: auto;
-                aspect-ratio: 1;
-            }
-        </style>
-    </head>
-    <body>
-        <Nav />
-        <Container>
-            <main class="xs:columns-1 sm:columns-2 md:columns-4 gap-x-4 gap-y-4">
-                {
-                    works.map(({ data }, index) => (
-                        <a href={`/portfolio/${data.id}`} class="aspect-square">
-                            <Image
-                                src={data.image}
-                                alt={data.alt}
-                                priority={index < 6}
-                                layout="full-width"
-                                background="blurhash"
-                                fit="cover"
-                                class="mb-4"
-                            />
-                        </a>
-                    ))
-                }
-            </main>
-        </Container>
-        <Footer />
-    </body>
-</html>
+<Page title="Portfolio" permalink="/portfolio" description="portfolio" columns={1}>
+    <style slot="head-slot">
+        img {
+            height: auto;
+            aspect-ratio: 1;
+        }
+
+        .portfolio {
+            margin: auto auto;
+        }
+    </style>
+    <div slot="left-side" class="w-2/3"></div>
+    <div class="portfolio sm:columns-2 lg:columns-3 gap-x-4 gap-y-4 w-full md:w-2/3 mx-auto">
+        {
+            works.map(({ data }, index) => (
+                <a href={`/portfolio/${data.id}`} class="aspect-square relative" data-astro-prefetch="hover">
+                    <Image
+                        src={data.image}
+                        alt={data.title}
+                        priority={index < 6}
+                        layout="full-width"
+                        background="blurhash"
+                        fit="cover"
+                        class="mb-4 bg-gray-500"
+                    />
+                </a>
+            ))
+        }
+    </div>
+</Page>

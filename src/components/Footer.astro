@@ -1,29 +1,39 @@
 ---
 import Container from './Container.astro';
 import content from '../content/homepage.json';
+import Facebook from '../assets/images/facebook.svg';
+import Instagram from '../assets/images/instagram.svg';
+
+const socials = content.socials.map((social) => ({
+    ...social,
+    icon: social.website === 'Facebook' ? Facebook : Instagram,
+}));
+
+const year = new Date(Date.now()).getFullYear();
+
+const { classes = '' } = Astro.props;
 ---
 
-<footer>
-    <Container>
-        <ul>
-            {
-                content.socials.map((social) => (
-                    <li>
-                        <a href={social.url} target="_blank" rel="nofollow noreferrer">
-                            {social.website}
-                        </a>
-                    </li>
-                ))
-            }
-        </ul>
-    </Container>
+<footer class={`${classes} flex w-full pt-3 justify-between border-t-1 border-gray-200`}>
+    <ul class="flex gap-2">
+        {
+            socials.map((social) => (
+                <li>
+                    <a href={social.url} target="_blank" rel="nofollow noreferrer">
+                        <social.icon class="fill-gray-500 hover:fill-amber-900" width="1rem" height="1rem" />
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+    <span class="text-sm">&copy; Daniel Murray {year}</span>
 </footer>
 
-<style>
+<!-- <style>
     footer {
         width: 100%;
         background-color: aliceblue;
         padding: 2rem 0;
         margin-top: 3rem;
     }
-</style>
+</style> -->

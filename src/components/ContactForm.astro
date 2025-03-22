@@ -1,14 +1,22 @@
-<form name="contact" netlify>
-    <p>
-        <label>Name <input type="text" name="name" /></label>
-    </p>
-    <p>
-        <label>Email <input type="email" name="email" /></label>
-    </p>
-    <p>
-        <label>Message <textarea name="message"></textarea></label>
-    </p>
-    <p>
-        <button type="submit">Send</button>
-    </p>
+---
+// TODO: replace with prod access key
+const accessKey = import.meta.env.DEV ? '7efd622d-2db2-47d8-8125-6e31a2ddf317' : '7efd622d-2db2-47d8-8125-6e31a2ddf317';
+---
+
+<form action="https://api.web3forms.com/submit" method="POST">
+    <!-- Replace with your Access Key -->
+    <input type="hidden" name="access_key" value={accessKey} />
+
+    <!-- Form Inputs. Each input must have a name="" attribute -->
+    <input type="text" name="name" required />
+    <input type="email" name="email" required />
+    <textarea name="message" required></textarea>
+
+    <!-- Honeypot Spam Protection -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+    <!-- Custom Confirmation / Success Page -->
+    <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
+
+    <button type="submit">Submit</button>
 </form>

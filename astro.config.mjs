@@ -17,6 +17,7 @@ export default defineConfig({
 
     experimental: {
         responsiveImages: true,
+        svg: true,
     },
 
     vite: {
@@ -24,4 +25,9 @@ export default defineConfig({
     },
 
     site: 'https://dan-murray-portfolio.netlify.app',
+
+    prefetch: {
+        prefetchAll: true,
+        defaultStrategy: 'viewport',
+    },
 });

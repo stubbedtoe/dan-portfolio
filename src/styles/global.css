@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
-body {
-    margin: 0
+@layer components {
+    a:hover {
+        color: var(--color-amber-900);
+    }
+}
+
+header, footer {
+    max-width: 800px;
 }

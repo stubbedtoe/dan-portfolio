@@ -1,0 +1,53 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Container from '../components/Container.astro';
+import Footer from '../components/Footer.astro';
+import Nav from '../components/Nav.astro';
+import { SITE } from '../config';
+
+interface Props {
+    title: string;
+    description: string;
+    permalink: string;
+    columns?: 1 | 2;
+}
+
+const { title, description, permalink, columns = 2 } = Astro.props;
+const layout = columns === 2 ? 'sm:flex ' : '';
+---
+
+<html lang="en">
+    <head>
+        <BaseHead title={`${SITE.title} | ${title}`} {description} {permalink} />
+        <slot name="head-slot" />
+    </head>
+    <body>
+        <Container>
+            <main class={`${layout}w-full min-h-screen`}>
+                {columns === 2 && <slot name="left-side" />}
+                <div class="flex flex-col w-full justify-between px-5 pt-0 pb-1">
+                    <Nav
+                        routes={[
+                            {
+                                title: 'Portfolio',
+                                path: '/portfolio',
+                            },
+                            {
+                                title: 'About',
+                                path: '/about',
+                            },
+                            {
+                                title: 'Contact',
+                                path: '/contact',
+                            },
+                        ]}
+                        currentTitle={title}
+                        classes={columns === 1 ? 'mb-8 mx-auto' : ''}
+                    />
+                    <slot />
+                    <Footer classes={columns === 1 ? 'mt-8 mx-auto' : ''} />
+                </div>
+            </main>
+        </Container>
+    </body>
+</html>

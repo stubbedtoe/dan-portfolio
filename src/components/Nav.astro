@@ -1,35 +1,31 @@
 ---
 import { SITE } from '../config';
-import Container from './Container.astro';
-import '../styles/global.css';
+
+interface Props {
+    routes: {
+        title: string;
+        path: string;
+    }[];
+    classes?: string;
+    currentTitle?: string;
+}
+
+const { classes = '', currentTitle = '', routes } = Astro.props;
 ---
 
-<header class="w-full pt-2 bg-[aliceblue]">
-    <Container>
-        <div class="flex justify-between w-full mb-8">
-            <a href="/">{SITE.title}</a>
-            <nav>
-                <ul class="flex gap-2">
-                    <li>
-                        <a href="/portfolio">Portfolio</a>
+<header
+    class={`${classes} sticky top-0 backdrop-blur-sm flex justify-between w-full pb-8 pt-5 w-full border-b-1 border-gray-500 bg-white/70 z-1`}
+>
+    <a href="/">{SITE.title}</a>
+    <nav>
+        <ul class="flex gap-3">
+            {
+                routes.map(({ title, path }) => (
+                    <li class={currentTitle === title ? 'text-amber-900' : ''}>
+                        <a href={path}>{title}</a>
                     </li>
-                    <li>
-                        <a href="/about">About</a>
-                    </li>
-                    <li>
-                        <a href="/contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </Container>
+                ))
+            }
+        </ul>
+    </nav>
 </header>
-
-<!-- <style>
-    header {
-        background-color: aliceblue;
-        margin-bottom: 3rem;
-    }
-
-
-</style> -->

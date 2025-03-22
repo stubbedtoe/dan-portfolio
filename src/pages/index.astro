@@ -11,6 +11,7 @@ import { getCollection } from 'astro:content';
 import Container from '../components/Container.astro';
 import Footer from '../components/Footer.astro';
 import ImageCaption from '../components/ImageCaption.astro';
+import Page from '../layouts/Page.astro';
 
 // Component Script:
 // You can write any JavaScript/TypeScript that you'd like here.
@@ -26,41 +27,30 @@ const [homePageImage, _] = await getCollection('portfolio');
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<html lang="en">
-    <head>
-        <BaseHead {title} {description} {permalink} />
-        <style>
-            img {
-                width: 50%;
-            }
-        </style>
-    </head>
-    <body>
-        <Nav />
-        <Container>
-            <main class="flex w-full gap-3">
-                <Image
-                    inferSize={true}
-                    src={homePageImage.data.image}
-                    alt={homePageImage.data.alt}
-                    widths={[200, 600, 1200]}
-                    priority={true}
-                    background="blurhash"
-                    fit="contain"
-                    layout="full-width"
-                    class="w-1/2"
-                />
-                <article class="flex flex-col justify-between mt-4">
-                    <p>{content.intro}</p>
-                    <ImageCaption
-                        title={homePageImage.data.title}
-                        medium={homePageImage.data.medium}
-                        Dimensions={homePageImage.data.Dimensions}
-                        year={homePageImage.data.year}
-                    />
-                </article>
-            </main>
-        </Container>
-        <Footer />
-    </body>
-</html>
+<Page {title} {description} {permalink}>
+    <style slot="head-slot">
+        img {
+            height: 100vh;
+        }
+    </style>
+    <Image
+        inferSize={true}
+        src={homePageImage.data.image}
+        alt={homePageImage.data.alt}
+        priority={true}
+        background="blurhash"
+        fit="contain"
+        layout="full-width"
+        class="w-full md:w-1/2"
+        widths={[200, 300, 400]}
+        sizes="(max-width: 399px) 200px, (min-width: 400px) 300px, (min-width: 800px) 400px"
+        slot="left-side"
+    />
+    <p>{content.intro}</p>
+    <ImageCaption
+        title={homePageImage.data.title}
+        medium={homePageImage.data.medium}
+        Dimensions={homePageImage.data.Dimensions}
+        year={homePageImage.data.year}
+    />
+</Page>

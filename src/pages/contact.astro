@@ -1,17 +1,8 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Nav from '../components/Nav.astro';
 import ContactForm from '../components/ContactForm.astro';
-import Footer from '../components/Footer.astro';
+import Page from '../layouts/Page.astro';
 ---
 
-<html lang="en">
-    <head>
-        <BaseHead title="Contact" permalink="/contact" description="contat me" />
-    </head>
-    <body>
-        <Nav />
-        <ContactForm />
-        <Footer />
-    </body>
-</html>
+<Page title="Contact" permalink="/contact" description="" columns={1}>
+    <ContactForm />
+</Page>
