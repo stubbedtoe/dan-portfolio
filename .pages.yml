@@ -93,7 +93,7 @@ content:
         - name: 'date'
           type: 'date'
           label: 'Date'
-          description: 'Just the month and day will be shown (this field will be used to order the exhibitions)'
+          description: 'Just the month and year will be shown (this field will be used to order the exhibitions)'
           required: true
         - name: 'title'
           type: 'string'
@@ -114,3 +114,20 @@ content:
           default: Group
           options:
             values: [Group, Solo]
+    - name: 'Awards'
+      path: 'src/content/awards.json'
+      type: 'file'
+      list: true
+      fields:
+        - name: 'award'
+          label: 'Award'
+          type: 'rich-text'
+          required: true
+          description: 'Add the award details here'
+        - name: 'year'
+          type: 'date'
+          label: 'Year'
+          description: 'Just the year will be shown (this field will be used to order the awards)'
+          required: true
+          
+       
