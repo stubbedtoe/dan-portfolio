@@ -53,6 +53,12 @@ content:
             type: 'image'
             label: 'Image'
             required: true
+            description: 'Before uploading an image to the "media" section, it is a good idea to compress it using https://squoosh.app/ (just use the default settings)'
+          - name: 'active'
+            type: 'boolean'
+            default: true
+            required: true
+            description: 'Set this field to false if you want to hide the item from the portfolio (but do not want to delete it entirely)'
     - name: 'Homepage'
       path: 'src/content/homepage.json'
       type: 'file'
@@ -79,3 +85,32 @@ content:
             type: 'rich-text'
             label: 'Introductory text'
             description: 'To be shown only on the homepage'
+    - name: 'Exhibitions'
+      path: 'src/content/exhibitions.json'
+      type: 'file'
+      list: true
+      fields:
+        - name: 'date'
+          type: 'date'
+          label: 'Date'
+          description: 'Just the month and day will be shown (this field will be used to order the exhibitions)'
+          required: true
+        - name: 'title'
+          type: 'string'
+          label: 'Title of the exhibition'
+          required: true
+        - name: 'venue'
+          type: 'string'
+          label: 'Venue (name of gallery or whatever)'
+          required: true
+        - name: 'website'
+          type: 'string'
+          label: 'Link (optional)'
+        - name: 'typeOfExhibition'
+          type: 'select'
+          label: 'Type of exhibition'
+          description: 'This field will be used to group the exhibition items'
+          required: true
+          default: Group
+          options:
+            values: [Group, Solo]
