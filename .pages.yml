@@ -117,6 +117,7 @@ content:
     - name: 'Awards'
       path: 'src/content/awards.json'
       type: 'file'
+      icon: 'award'
       list: true
       fields:
         - name: 'award'
