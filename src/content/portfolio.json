@@ -9,7 +9,8 @@
     },
     "year": "2018-06-06",
     "alt": "A young woman sitting cross-legged looking upwards. The background is an abstract landscape",
-    "image": "/src/images/Jane Seated 2018 Acrylics on board 84cm x 135cm.JPG"
+    "image": "/src/images/Jane Seated 2018 Acrylics on board 84cm x 135cm.JPG",
+    "active": true
   },
   {
     "title": "Andrew Seated",
@@ -21,7 +22,8 @@
     },
     "year": "2023-06-07",
     "alt": "A man seated looking to the side with his head resting in his hand",
-    "image": "/src/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg"
+    "image": "/src/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg",
+    "active": true
   },
   {
     "title": "Alan with Manson",
@@ -33,7 +35,8 @@
     },
     "year": "2018-06-07",
     "alt": "A man with long hair with his hand resting on the black and white do beside him. Both subjects are looking forward.",
-    "image": "/src/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG"
+    "image": "/src/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG",
+    "active": true
   },
   {
     "title": "Eleaine",
@@ -45,7 +48,8 @@
     },
     "year": "2020-06-09",
     "alt": "A smiling red-haired woman with glasses in a blue NHS nurse's uniform looking straight ahead.",
-    "image": "/src/images/Eleaine - Acrylic on Board - 45cm x 65cm - 2020.JPG"
+    "image": "/src/images/Eleaine - Acrylic on Board - 45cm x 65cm - 2020.JPG",
+    "active": true
   },
   {
     "title": "John and Lyndsay Todd",
@@ -57,7 +61,8 @@
     },
     "year": "2021-06-09",
     "alt": "A man and a woman embracing. The man has a tattoo on his arm and the woman is heavily pregnant.",
-    "image": "/src/images/John and Lyndsay Todd - Acrylic on Board - 91cm x  120cm - 2021.jpg"
+    "image": "/src/images/John and Lyndsay Todd - Acrylic on Board - 91cm x  120cm - 2021.jpg",
+    "active": true
   },
   {
     "title": "Mum in 6 Naast with a View to Sron Dubh",
@@ -69,7 +74,8 @@
     },
     "year": "2021-06-09",
     "alt": "Woman sitting with her hands on her lap in a garden with a mountain silhouette in the background",
-    "image": "/src/images/Mum in 6 Naast with view to Sron Dubh - Acrylic on Board - 98cm x 170cm - 2021.jpg"
+    "image": "/src/images/Mum in 6 Naast with view to Sron Dubh - Acrylic on Board - 98cm x 170cm - 2021.jpg",
+    "active": true
   },
   {
     "title": "Mum in the Afternoon Light",
@@ -81,7 +87,8 @@
     },
     "year": "2025-03-07",
     "alt": "Close up of a woman's face. She is looking at something out of frame to the upper right.",
-    "image": "/src/images/Mum in the afternoon light - Acrylic on Board -  23cm x 30cm - 2025.jpg"
+    "image": "/src/images/Mum in the afternoon light - Acrylic on Board -  23cm x 30cm - 2025.jpg",
+    "active": true
   },
   {
     "title": "Nude Self Portrait",
@@ -93,7 +100,8 @@
     },
     "year": "2022-06-08",
     "alt": "A nude man standing and looking upwards. The light is coming from above.",
-    "image": "/src/images/Nude self portrait - Acrylic on Board -  81cm x 170cm - 2022.jpg"
+    "image": "/src/images/Nude self portrait - Acrylic on Board -  81cm x 170cm - 2022.jpg",
+    "active": true
   },
   {
     "title": "Self Portrait at Firemore",
@@ -105,7 +113,8 @@
     },
     "year": "2023-10-10",
     "alt": "Head and shoulders of a man with his hair tied back. He does not have any clothes on. The background is a dark landscape.",
-    "image": "/src/images/Self-Portrait at Firemore- Acrylic on Board - 60cm x 70cm - 2023.jpg"
+    "image": "/src/images/Self-Portrait at Firemore- Acrylic on Board - 60cm x 70cm - 2023.jpg",
+    "active": true
   },
   {
     "title": "Sandy Macrae",
@@ -117,7 +126,8 @@
     },
     "year": "2019-06-05",
     "alt": "A hooded middle-aged man staring straight ahead",
-    "image": "/src/images/Sandy Macrae - Acrylic on Canvas - 42cm x 60cm - 2019.jpg"
+    "image": "/src/images/Sandy Macrae - Acrylic on Canvas - 42cm x 60cm - 2019.jpg",
+    "active": true
   },
   {
     "title": "Margaret Tiller With Self Portrait",
@@ -129,7 +139,8 @@
     },
     "year": "2019-06-12",
     "alt": "Older woman sitting wearing a pint shirt with a painting in the background",
-    "image": "/src/images/Margaret Tiller with Self-Portrait - Acrylic on Board -  48cm x 60cm - 2019.jpg"
+    "image": "/src/images/Margaret Tiller with Self-Portrait - Acrylic on Board -  48cm x 60cm - 2019.jpg",
+    "active": true
   },
   {
     "title": "Stewart Macrae with MV Kindat",
@@ -141,6 +152,7 @@
     },
     "year": "2019-06-19",
     "alt": "An older man pictured against a marine backdrop with a ship on the horizon ",
-    "image": "/src/images/Stewart Macrae with MV Kindat - Acrylic on Board - 60cm x 74cm - 20219.jpg"
+    "image": "/src/images/Stewart Macrae with MV Kindat - Acrylic on Board - 60cm x 74cm - 20219.jpg",
+    "active": true
   }
 ]

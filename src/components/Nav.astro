@@ -16,7 +16,7 @@ const { classes = '', currentTitle = '', routes } = Astro.props;
 <header
     class={`${classes} sticky top-0 backdrop-blur-sm flex justify-between w-full pb-8 pt-5 w-full border-b-1 border-gray-500 bg-white/70 z-1`}
 >
-    <a href="/">{SITE.title}</a>
+    <h1><a href="/">{SITE.title}</a></h1>
     <nav>
         <ul class="flex gap-3">
             {

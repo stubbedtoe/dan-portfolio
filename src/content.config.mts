@@ -19,6 +19,7 @@ const portfolio = defineCollection({
             }),
             year: z.string(),
             medium: z.string(),
+            active: z.boolean(),
         }),
 });
 
