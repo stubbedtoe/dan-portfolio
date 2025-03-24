@@ -1,5 +1,4 @@
 ---
-import Container from './Container.astro';
 import content from '../content/homepage.json';
 import Facebook from '../assets/images/facebook.svg';
 import Instagram from '../assets/images/instagram.svg';
@@ -19,7 +18,7 @@ const { classes = '' } = Astro.props;
         {
             socials.map((social) => (
                 <li>
-                    <a href={social.url} target="_blank" rel="nofollow noreferrer">
+                    <a href={social.url} title={social.website} target="_blank" rel="nofollow noreferrer">
                         <social.icon class="fill-gray-500 hover:fill-amber-900" width="1rem" height="1rem" />
                     </a>
                 </li>
@@ -28,12 +27,3 @@ const { classes = '' } = Astro.props;
     </ul>
     <span class="text-sm">&copy; Daniel Murray {year}</span>
 </footer>
-
-<!-- <style>
-    footer {
-        width: 100%;
-        background-color: aliceblue;
-        padding: 2rem 0;
-        margin-top: 3rem;
-    }
-</style> -->

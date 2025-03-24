@@ -11,7 +11,6 @@ import Page from '../layouts/Page.astro';
 // You can write any JavaScript/TypeScript that you'd like here.
 // It will run during the build, but never in the browser.
 // All variables are available to use in the HTML template below.
-let { title } = SITE;
 let description = '';
 let permalink = 'https://dan-murray-portfolio.netlify.com/';
 const [homePageImage, _] = await getCollection('portfolio');
@@ -21,7 +20,7 @@ const [homePageImage, _] = await getCollection('portfolio');
 // https://docs.astro.build/core-concepts/astro-components/
 ---
 
-<Page {title} {description} {permalink}>
+<Page title="Portrait Painter" {description} {permalink}>
     <style slot="head-slot">
         img {
             height: 100vh;

@@ -1,6 +1,8 @@
 ---
 import exhibitions from '../content/exhibitions.json';
+import awards from '../content/awards.json';
 import Page from '../layouts/Page.astro';
+import { markdown } from '@astropub/md'
 
 type ExhibitionType = 'Solo' | 'Group';
 
@@ -37,9 +39,21 @@ const processExhibitions = (list: Exhibition[], type: ExhibitionType): Exhibitio
 
 const soloExibitions = processExhibitions(exhibitions as Exhibition[], 'Solo');
 const groupExhibitions = processExhibitions(exhibitions as Exhibition[], 'Group');
+
 ---
 
 <Page title="About" permalink="/about" description="">
+    {awards.length > 0 && (
+        <h2>Awards</h2>
+        <ul>
+            {awards.map(async ({ year, award }) => (
+                <li>
+                    <span class="font-bold">{(new Date(year).getFullYear())}</span>
+                    <br />{await markdown(award)}
+                </li>
+            ))}
+        </ul>
+    )}
     {soloExibitions.length > 0 && (
         <h2>Solo Exhibitions</h2>
         <ul>
