@@ -130,5 +130,25 @@ content:
           label: 'Year'
           description: 'Just the year will be shown (this field will be used to order the awards)'
           required: true
-          
+    - name: 'About'
+      path: 'src/content/about.json'
+      type: 'file'
+      fields:
+        - name: 'images'
+          label: 'Images'
+          list: true
+          type: 'object'
+          fields:
+            - name: 'image'
+              label: 'Image'
+              type: 'image'
+              required: true
+            - name: 'alt'
+              label: 'Alt Text'
+              type: 'string'
+              description: 'Provide a description of the image for people with impaired sight'
+              required: true
+        - name: 'statement'
+          label: 'Artists Statement'
+          type: 'rich-text'
        
