@@ -1,0 +1,25 @@
+{
+  "$ref": "#/definitions/awards",
+  "definitions": {
+    "awards": {
+      "type": "object",
+      "properties": {
+        "year": {
+          "type": "string"
+        },
+        "award": {
+          "type": "string"
+        },
+        "$schema": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "year",
+        "award"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "$schema": "http://json-schema.org/draft-07/schema#"
+}

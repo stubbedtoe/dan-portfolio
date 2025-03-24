@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
+    "@astropub/md": "^1.0.0",
     "@playform/compress": "^0.1.7",
     "@playform/inline": "^0.1.1",
     "@tailwindcss/vite": "4.0.9",
