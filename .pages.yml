@@ -90,65 +90,68 @@ content:
       type: 'file'
       list: true
       fields:
-        - name: 'date'
-          type: 'date'
-          label: 'Date'
-          description: 'Just the month and year will be shown (this field will be used to order the exhibitions)'
-          required: true
-        - name: 'title'
-          type: 'string'
-          label: 'Title of the exhibition'
-          required: true
-        - name: 'venue'
-          type: 'string'
-          label: 'Venue (name of gallery or whatever)'
-          required: true
-        - name: 'website'
-          type: 'string'
-          label: 'Link (optional)'
-        - name: 'typeOfExhibition'
-          type: 'select'
-          label: 'Type of exhibition'
-          description: 'This field will be used to group the exhibition items'
-          required: true
-          default: Group
-          options:
-            values: [Group, Solo]
+          - name: 'date'
+            type: 'date'
+            label: 'Date'
+            description: 'Just the month and year will be shown (this field will be used to order the exhibitions)'
+            required: true
+          - name: 'title'
+            type: 'string'
+            label: 'Title of the exhibition'
+            required: true
+          - name: 'venue'
+            type: 'string'
+            label: 'Venue (name of gallery or whatever)'
+            required: true
+          - name: 'website'
+            type: 'string'
+            label: 'Link (optional)'
+          - name: 'typeOfExhibition'
+            type: 'select'
+            label: 'Type of exhibition'
+            description: 'This field will be used to group the exhibition items'
+            required: true
+            default: Group
+            options:
+                values: [Group, Solo]
     - name: 'Awards'
       path: 'src/content/awards.json'
       type: 'file'
       icon: 'award'
       list: true
       fields:
-        - name: 'award'
-          label: 'Award'
-          type: 'rich-text'
-          required: true
-          description: 'Add the award details here'
-        - name: 'year'
-          type: 'date'
-          label: 'Year'
-          description: 'Just the year will be shown (this field will be used to order the awards)'
-          required: true
+          - name: 'award'
+            label: 'Award'
+            type: 'rich-text'
+            required: true
+            description: 'Add the award details here'
+          - name: 'year'
+            type: 'date'
+            label: 'Year'
+            description: 'Just the year will be shown (this field will be used to order the awards)'
+            required: true
     - name: 'About'
       path: 'src/content/about.json'
       type: 'file'
       fields:
-        - name: 'images'
-          label: 'Images'
-          list: true
-          type: 'object'
-          fields:
-            - name: 'image'
-              label: 'Image'
-              type: 'image'
-              required: true
-            - name: 'alt'
-              label: 'Alt Text'
-              type: 'string'
-              description: 'Provide a description of the image for people with impaired sight'
-              required: true
-        - name: 'statement'
-          label: 'Artists Statement'
-          type: 'rich-text'
-       
+          - name: 'images'
+            label: 'Images'
+            list: true
+            type: 'object'
+            fields:
+                - name: 'image'
+                  label: 'Image'
+                  type: 'image'
+                  required: true
+                - name: 'alt'
+                  label: 'Alt Text'
+                  type: 'string'
+                  description: 'Provide a description of the image for people with impaired sight'
+                  required: true
+                - name: 'id'
+                  label: 'Id'
+                  description: 'Do not worry too much about this. Just used internally so as long as its unique you are fine'
+                  required: true
+          - name: 'statement'
+            label: 'Artists Statement'
+            type: 'rich-text'

@@ -23,5 +23,15 @@ const portfolio = defineCollection({
         }),
 });
 
+const aboutImages = defineCollection({
+    loader: file('src/content/about.json', { parser: (text) => JSON.parse(text).images }),
+    schema: ({ image }) =>
+        z.object({
+            id: z.string(),
+            image: image(),
+            alt: z.string(),
+        }),
+});
+
 // 4. Export a single `collections` object to register your collection(s)
-export const collections = { portfolio };
+export const collections = { portfolio, aboutImages };

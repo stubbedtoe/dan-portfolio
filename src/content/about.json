@@ -2,15 +2,18 @@
   "images": [
     {
       "image": "/src/images/danmurrayartist-1.jpg",
-      "alt": "Daniel Murray working at a painting sitting on an easel"
+      "alt": "Daniel Murray working at a painting sitting on an easel",
+      "id": "About image 1"
     },
     {
       "image": "/src/images/danmurrayartist-2.jpg",
-      "alt": "Close up of a hand holding a paint brush working on a portrait"
+      "alt": "Close up of a hand holding a paint brush working on a portrait",
+      "id": "About image 2"
     },
     {
       "image": "/src/images/skyarts.jpg",
-      "alt": "Daniel Murray painting at an easel at the Portrait Artist of the Year event"
+      "alt": "Daniel Murray painting at an easel at the Portrait Artist of the Year event",
+      "id": "About image 3"
     }
   ],
   "statement": "I enjoy painting realistic portrayals of the human form and mixing that with abstracted landscapes inspired by the highland environment I grew up in.\n\nUsing scale, contrast and composition, I create atmospheric worlds in which the subjects of the paintings inhabit. Striking, slightly unsettling, jagged, unworldly backdrops that accentuate the fragility of the human condition represented by the figures. My paintings are inspired by my own life experiences."

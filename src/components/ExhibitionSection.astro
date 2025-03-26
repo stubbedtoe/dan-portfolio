@@ -1,0 +1,59 @@
+---
+import AboutSection from './AboutSection.astro';
+
+interface Props {
+    heading: string;
+    exhibitions: Exhibition[];
+}
+
+type ExhibitionType = 'Solo' | 'Group';
+
+interface Exhibition {
+    date: string;
+    title: string;
+    venue: string;
+    typeOfExhibition: ExhibitionType;
+    link?: string;
+}
+
+const sortFunction = (a: Exhibition, b: Exhibition): number => {
+    const dateA = Date.parse(a.date);
+    const dateB = Date.parse(b.date);
+    return dateB - dateA;
+};
+
+const formatDate = (a: Exhibition): Exhibition => {
+    const parsed = new Date(Date.parse(a.date));
+    const month = new Intl.DateTimeFormat('en-US', { month: 'short' }).format(parsed);
+    const year = parsed.getFullYear();
+    return {
+        ...a,
+        date: `${month} ${year}`,
+    };
+};
+
+const { heading, exhibitions } = Astro.props;
+
+const processedExhibitions = exhibitions.sort(sortFunction).map(formatDate);
+---
+
+{
+    processedExhibitions.length > 0 && (
+        <AboutSection {heading}>
+            <ul>
+                {processedExhibitions.map(({ date, title, venue, link }) => (
+                    <li>
+                        <span class="font-bold">{date},</span>&nbsp;<span class="italic">{title}</span>
+                        <br />
+                        <span>{venue}</span>
+                        {link && (
+                            <>
+                                &nbsp;<a href="link">link</a>
+                            </>
+                        )}
+                    </li>
+                ))}
+            </ul>
+        </AboutSection>
+    )
+}

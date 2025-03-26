@@ -3,14 +3,17 @@
 const accessKey = import.meta.env.DEV ? '7efd622d-2db2-47d8-8125-6e31a2ddf317' : '7efd622d-2db2-47d8-8125-6e31a2ddf317';
 ---
 
-<form action="https://api.web3forms.com/submit" method="POST">
+<form class="flex-col gap-3 max-w-[800px] m-auto" action="https://api.web3forms.com/submit" method="POST">
     <!-- Replace with your Access Key -->
     <input type="hidden" name="access_key" value={accessKey} />
 
     <!-- Form Inputs. Each input must have a name="" attribute -->
-    <input type="text" name="name" required />
-    <input type="email" name="email" required />
-    <textarea name="message" required></textarea>
+    <label for="name">Name</label>
+    <input class="outline-1" type="text" name="name" required />
+    <label for="email">Email address</label>
+    <input class="outline-1" type="email" name="email" required />
+    <label for="message">Your message</label>
+    <textarea class="outline-1" name="message" required></textarea>
 
     <!-- Honeypot Spam Protection -->
     <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
@@ -18,5 +21,5 @@ const accessKey = import.meta.env.DEV ? '7efd622d-2db2-47d8-8125-6e31a2ddf317' :
     <!-- Custom Confirmation / Success Page -->
     <!-- <input type="hidden" name="redirect" value="https://mywebsite.com/thanks.html"> -->
 
-    <button type="submit">Submit</button>
+    <button class="bg-amber-700 text-white" type="submit">Submit</button>
 </form>

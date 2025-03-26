@@ -1,79 +1,80 @@
 ---
+import { Image } from 'astro:assets';
 import exhibitions from '../content/exhibitions.json';
 import awards from '../content/awards.json';
+import about from '../content/about.json';
 import Page from '../layouts/Page.astro';
-import { markdown } from '@astropub/md'
+import { markdown } from '@astropub/md';
+import { getCollection } from 'astro:content';
+import AboutSection from '../components/AboutSection.astro';
+import ExhibitionSection from '../components/ExhibitionSection.astro';
+import type { Exhibition } from '../components/ExhibitionSection.astro';
 
-type ExhibitionType = 'Solo' | 'Group';
-
-interface Exhibition {
-    date: string;
-    title: string;
-    venue: string;
-    typeOfExhibition: ExhibitionType; 
-    link?: string;
+interface Award {
+    year: string;
+    award: string;
 }
 
-const sortFunction = (a: Exhibition, b: Exhibition): number => {
-    const dateA = Date.parse(a.date);
-    const dateB = Date.parse(b.date);
+const sortedAwards = awards.sort((a: Award, b: Award) => {
+    const dateA = Date.parse(a.year);
+    const dateB = Date.parse(b.year);
     return dateB - dateA;
-}
+});
 
-const formatDate = (a: Exhibition): Exhibition => {
-    const parsed = new Date(Date.parse(a.date));
-    const month = new Intl.DateTimeFormat("en-US", { month: 'short' }).format(parsed);
-    const year = parsed.getFullYear();
-    return {
-        ...a,
-        date: `${month} ${year}`,
-    };
-};
+const aboutImages = await getCollection('aboutImages');
 
-const processExhibitions = (list: Exhibition[], type: ExhibitionType): Exhibition[] => (
-    list.filter((e) => e.typeOfExhibition === type)
-        .sort(sortFunction)
-        .map(formatDate)
-)
-
-
-const soloExibitions = processExhibitions(exhibitions as Exhibition[], 'Solo');
-const groupExhibitions = processExhibitions(exhibitions as Exhibition[], 'Group');
-
+const soloExibitions = exhibitions.filter((e) => e.typeOfExhibition === 'Solo') as Exhibition[];
+const groupExhibitions = exhibitions.filter((e) => e.typeOfExhibition === 'Group') as Exhibition[];
 ---
 
 <Page title="About" permalink="/about" description="">
-    {awards.length > 0 && (
-        <h2>Awards</h2>
-        <ul>
-            {awards.map(async ({ year, award }) => (
-                <li>
-                    <span class="font-bold">{(new Date(year).getFullYear())}</span>
-                    <br />{await markdown(award)}
-                </li>
-            ))}
-        </ul>
-    )}
-    {soloExibitions.length > 0 && (
-        <h2>Solo Exhibitions</h2>
-        <ul>
-            {soloExibitions.map(({ date, title, venue, link }) => (
-                <li>
-                    <span class="font-bold">{date},</span>&nbsp;<span class="italic">{title}</span>
-                    <br /><span>{venue}</span>{link && (<>&nbsp;<a href="link">link</a></>)}
-                </li>
-            ))}
-        </ul>
-    )}
-    {groupExhibitions.length > 0 && (
-        <h2>Selected Group Exhibitions</h2>
-        <ul>
-            {groupExhibitions.map(({ date, title, venue, link }) => (
-                <li>
-                    <span class="font-bold">{date},</span>&nbsp;<span class="italic">{title}</span>
-                    <br /><span>{venue}</span>{link && (<>&nbsp;<a href="link">link</a></>)}
-                </li>
-            ))}
-        </ul>
-    )}
+    <style slot="head-slot">
+        img {
+            height: auto;
+        }
+    </style>
+    {
+        aboutImages.length > 0 && (
+            <div slot="left-side" class="w-full md:w-1/2 flex-col mt-12">
+                {aboutImages.map(({ data }) => (
+                    <Image
+                        inferSize={true}
+                        src={data.image}
+                        alt={data.alt}
+                        priority={true}
+                        background="blurhash"
+                        fit="contain"
+                        layout="full-width"
+                        class="w-full h-auto my-6"
+                        widths={[200, 300, 400]}
+                        sizes="(max-width: 399px) 200px, (min-width: 400px) 300px, (min-width: 800px) 400px"
+                    />
+                ))}
+            </div>
+        )
+    }
+    {
+        about.statement && (
+            <AboutSection heading="Artist's Statement">
+                <div class="flex-col gap-2">{await markdown(about.statement)}</div>
+            </AboutSection>
+        )
+    }
+    {
+        sortedAwards.length > 0 && (
+            <AboutSection heading="Awards">
+                <ul>
+                    {sortedAwards.map(async ({ year, award }) => (
+                        <li>
+                            <span class="font-bold">{new Date(year).getFullYear()}</span>
+                            <br />
+                            {await markdown(award)}
+                        </li>
+                    ))}
+                </ul>
+            </AboutSection>
+        )
+    }
+    <ExhibitionSection heading="Solo Exhibitions" exhibitions={soloExibitions} />
+    <ExhibitionSection heading="Selected Group Exhibitions" exhibitions={groupExhibitions} />
 </Page>
