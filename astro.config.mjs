@@ -3,7 +3,8 @@ import AstroPWA from '@vite-pwa/astro';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import compressor from 'astro-compressor';
-import opengraphImages, { presets } from 'astro-opengraph-images';
+import opengraphImages from 'astro-opengraph-images';
+import { customOGrenderer } from './src/CustomOGRenderer.tsx';
 
 // https://astro.build/config
 export default defineConfig({
@@ -23,7 +24,7 @@ export default defineConfig({
                     },
                 ],
             },
-            render: presets.blackAndWhite,
+            render: customOGrenderer,
         }),
         compressor(),
     ],
