@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { SEO } from 'astro-seo';
+import { getImagePath } from 'astro-opengraph-images';
 
 export interface Props {
     title: string;
@@ -7,6 +9,8 @@ export interface Props {
     permalink: string;
 }
 const { title, description, permalink } = Astro.props;
+const { url, site } = Astro;
+const openGraphImageUrl = getImagePath({ url, site });
 ---
 
 <!-- Global Metadata -->
@@ -24,14 +28,14 @@ const { title, description, permalink } = Astro.props;
 <meta property="og:url" content={permalink} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content="https://astro.build/social.png?v=1" />
+<meta property="og:image" content={openGraphImageUrl} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={permalink} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content="https://astro.build/social.png?v=1" />
+<meta property="twitter:image" content={openGraphImageUrl} />
 
 <!-- Analytics -->
 <script type="text/javascript">
