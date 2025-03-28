@@ -1,0 +1,18 @@
+{
+    "title": "Sandy Macrae",
+    "id": "sandy-macrae",
+    "medium": "Acrylic on canvas",
+    "Dimensions": {
+      "width": 42,
+      "height": 60
+    },
+    "year": "2019-06-05",
+    "alt": "A hooded middle-aged man staring straight ahead",
+    "image": "/src/images/Sandy Macrae - Acrylic on Canvas - 42cm x 60cm - 2019.jpg",
+    "active": true,
+    "areaOfInterest": "centre",
+    "category": [
+      "commissions"
+    ],
+    "order": 10
+  }
