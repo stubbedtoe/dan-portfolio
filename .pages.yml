@@ -194,7 +194,7 @@ content:
             options:
                 collection: 'Portfolio'
                 label: '{title}'
-                image: '{image}'
+                image: './{image}'
     - name: 'Exhibitions'
       path: 'src/content/exhibitions.json'
       type: 'file'
