@@ -59,6 +59,20 @@ content:
             default: true
             required: true
             description: 'Set this field to false if you want to hide the item from the portfolio (but do not want to delete it entirely)'
+          - name: 'areaOfInterest'
+            label: 'Area of Interest'
+            type: 'select'
+            default: 'centre'
+            required: true
+            description: 'The portfolio page will crop images. This field tells it where the face/interesting part of the image is so that it does not get cropped'
+            options:
+              values: [top, centre, bottom]
+          - name: 'category'
+            label: 'Category'
+            type: 'select'
+            required: true
+            default: 'personal'
+            
     - name: 'Homepage'
       path: 'src/content/homepage.json'
       type: 'file'
@@ -76,6 +90,7 @@ content:
                   label: 'Website'
                   required: true
                   options:
+                      creatable: true
                       values: [Facebook, Instagram, X, LinkedIn, Pinterest]
                 - name: 'url'
                   type: 'string'
@@ -149,9 +164,9 @@ content:
                   description: 'Provide a description of the image for people with impaired sight'
                   required: true
                 - name: 'id'
-                  label: 'Id'
-                  description: 'Do not worry too much about this. Just used internally so as long as its unique you are fine'
+                  type: 'uuid'
                   required: true
+                  hidden: true
           - name: 'statement'
             label: 'Artists Statement'
             type: 'rich-text'
