@@ -191,6 +191,8 @@ content:
             required: true
             options:
               collection: 'Portfolio'
+              label: "{title}"
+              image: "{image}"
             
     - name: 'Exhibitions'
       path: 'src/content/exhibitions.json'
