@@ -193,7 +193,7 @@ content:
               collection: 'Portfolio'
               label: "{title}"
               image: "{image}"
-            
+              value: "{title}"
     - name: 'Exhibitions'
       path: 'src/content/exhibitions.json'
       type: 'file'
