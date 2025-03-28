@@ -185,6 +185,13 @@ content:
             type: 'rich-text'
             label: 'Introductory text'
             description: 'To be shown only on the homepage'
+          - name: 'image'
+            type: 'reference'
+            label: 'Homepage image'
+            required: true
+            options:
+              collection: 'Portfolio'
+            
     - name: 'Exhibitions'
       path: 'src/content/exhibitions.json'
       type: 'file'
