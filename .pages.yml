@@ -58,7 +58,7 @@ content:
             type: 'image'
             label: 'Image'
             required: true
-            description: 'Before uploading an image to the "media" section, it is a good idea to compress it using https://squoosh.app/ (just use the default settings)'
+            description: 'Before uploading an image here or to the "media" section, it is a good idea to compress it using https://squoosh.app/ (just use the default settings)'
           - name: 'active'
             type: 'boolean'
             default: true
@@ -174,6 +174,8 @@ content:
             options:
                 collection: 'Portfolio'
                 label: '{title}'
+                value: '{title}'
+                image: '{image}'
           - name: 'socials'
             type: 'object'
             label: 'Social media links'
