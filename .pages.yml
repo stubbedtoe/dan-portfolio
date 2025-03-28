@@ -175,7 +175,6 @@ content:
                 collection: 'Portfolio'
                 label: '{title}'
                 value: '{title}'
-                image: '{image}'
           - name: 'socials'
             type: 'object'
             label: 'Social media links'
