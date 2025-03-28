@@ -2,11 +2,11 @@
 import { defineCollection, z } from 'astro:content';
 
 // 2. Import loader(s)
-import { file } from 'astro/loaders';
+import { file, glob } from 'astro/loaders';
 
 // 3. Define your collection(s)
 const portfolio = defineCollection({
-    loader: file('src/content/portfolio.json'),
+    loader: glob({ pattern: '*.json', base: './src/content/_portfolio/' }),
     schema: ({ image }) =>
         z.object({
             title: z.string(),
@@ -20,6 +20,9 @@ const portfolio = defineCollection({
             year: z.string(),
             medium: z.string(),
             active: z.boolean(),
+            areaOfInterest: z.enum(['top', 'centre', 'bottom']),
+            category: z.array(z.string()),
+            order: z.number(),
         }),
 });
 

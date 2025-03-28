@@ -41,6 +41,23 @@
         "active": {
           "type": "boolean"
         },
+        "areaOfInterest": {
+          "type": "string",
+          "enum": [
+            "top",
+            "centre",
+            "bottom"
+          ]
+        },
+        "category": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "order": {
+          "type": "number"
+        },
         "$schema": {
           "type": "string"
         }
@@ -53,7 +70,10 @@
         "Dimensions",
         "year",
         "medium",
-        "active"
+        "active",
+        "areaOfInterest",
+        "category",
+        "order"
       ],
       "additionalProperties": false
     }
