@@ -6,10 +6,11 @@ import Page from '../../layouts/Page.astro';
 import { ClientRouter } from 'astro:transitions';
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-    const works = await getCollection('portfolio');
-    const activeWorks = works.filter((work) => work.data.active);
-    const n = activeWorks.length;
-    return activeWorks.map((painting, index) => {
+    const works = await getCollection('portfolio', ({ data }) => data.active);
+    const sortedWorks = works.sort((a, b) => a.data.order - b.data.order);
+    const n = sortedWorks.length;
+
+    return sortedWorks.map((painting, index) => {
         const nextIndex = (index + 1) % n;
         const next = `/portfolio/${works[nextIndex].id}`;
         const prevIndex = index - 1 < 0 ? n - 1 : index - 1;
