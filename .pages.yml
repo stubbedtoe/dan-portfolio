@@ -11,6 +11,8 @@ content:
         fields: [order, image, title, category, active]
         primary: id
         search: [ title, category ]
+        default:
+          sort: order
       fields:
         - name: 'title'
           type: 'string'
