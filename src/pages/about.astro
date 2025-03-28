@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import exhibitions from '../content/exhibitions.json';
 import awards from '../content/awards.json';
 import about from '../content/about.json';
@@ -29,51 +29,56 @@ const groupExhibitions = exhibitions.filter((e) => e.typeOfExhibition === 'Group
 
 <Page title="About" permalink="/about" description="">
     <style slot="head-slot">
-        img {
+        img,
+        picture {
             height: auto;
+            width: 100%;
         }
     </style>
     {
         aboutImages.length > 0 && (
-            <div slot="left-side" class="w-full md:w-1/2 flex-col mt-12">
+            <div slot="left-side" class="w-full md:w-2/3 flex-col">
                 {aboutImages.map(({ data }) => (
-                    <Image
+                    <Picture
                         inferSize={true}
                         src={data.image}
                         alt={data.alt}
-                        priority={true}
                         background="blurhash"
                         fit="contain"
                         layout="full-width"
-                        class="w-full h-auto my-6"
-                        widths={[200, 300, 400]}
-                        sizes="(max-width: 399px) 200px, (min-width: 400px) 300px, (min-width: 800px) 400px"
+                        widths={[600, 800, 1000]}
+                        sizes="(max-width: 400px) 800px, (max-width: 600px) 600px, 1000px"
+                        slot="left-side"
+                        class="w-full mb-4"
+                        formats={['webp', 'jpeg']}
                     />
                 ))}
             </div>
         )
     }
-    {
-        about.statement && (
-            <AboutSection heading="Artist's Statement">
-                <div class="flex-col gap-2">{await markdown(about.statement)}</div>
-            </AboutSection>
-        )
-    }
-    {
-        sortedAwards.length > 0 && (
-            <AboutSection heading="Awards">
-                <ul class="leading-8">
-                    {sortedAwards.map(async ({ year, award }) => (
-                        <li class="flex">
-                            <span class="font-bold w-[50px]">{new Date(year).getFullYear()}</span>
-                            <span>{await markdown(award)}</span>
-                        </li>
-                    ))}
-                </ul>
-            </AboutSection>
-        )
-    }
-    <ExhibitionSection heading="Solo Exhibitions" exhibitions={soloExibitions} />
-    <ExhibitionSection heading="Selected Group Exhibitions" exhibitions={groupExhibitions} />
+    <div class="w-full flex flex-col justify-around">
+        {
+            about.statement && (
+                <AboutSection heading="Artist's Statement">
+                    <div class="flex-col gap-2">{await markdown(about.statement)}</div>
+                </AboutSection>
+            )
+        }
+        {
+            sortedAwards.length > 0 && (
+                <AboutSection heading="Awards">
+                    <ul class="leading-8">
+                        {sortedAwards.map(async ({ year, award }) => (
+                            <li class="flex">
+                                <span class="font-bold w-[50px]">{new Date(year).getFullYear()}</span>
+                                <span>{await markdown(award)}</span>
+                            </li>
+                        ))}
+                    </ul>
+                </AboutSection>
+            )
+        }
+        <ExhibitionSection heading="Solo Exhibitions" exhibitions={soloExibitions} />
+        <ExhibitionSection heading="Selected Group Exhibitions" exhibitions={groupExhibitions} />
+    </div>
 </Page>

@@ -1,23 +1,18 @@
 ---
 // Component Imports
 import { Picture } from 'astro:assets';
-import { SITE } from '../config';
 import content from '../content/homepage.json';
 import { getCollection } from 'astro:content';
 import ImageCaption from '../components/ImageCaption.astro';
 import Page from '../layouts/Page.astro';
 
-// Component Script:
-// You can write any JavaScript/TypeScript that you'd like here.
-// It will run during the build, but never in the browser.
-// All variables are available to use in the HTML template below.
-let description = '';
+let description = content.intro;
 let permalink = 'https://dan-murray-portfolio.netlify.com/';
-const [homePageImage, _] = await getCollection('portfolio');
-// Data Fetching: List all Markdown posts in the repo.
 
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+const { image: imageTitle } = content;
+
+const portfolio = await getCollection('portfolio');
+const image = portfolio.find(({ data }) => data.title === imageTitle) || portfolio[0];
 ---
 
 <Page title="Portrait Painter" {description} {permalink}>
@@ -30,8 +25,8 @@ const [homePageImage, _] = await getCollection('portfolio');
     </style>
     <Picture
         inferSize={true}
-        src={homePageImage.data.image}
-        alt={homePageImage.data.alt}
+        src={image.data.image}
+        alt={image.data.alt}
         priority={true}
         background="blurhash"
         fit="contain"
@@ -44,9 +39,9 @@ const [homePageImage, _] = await getCollection('portfolio');
     />
     <p>{content.intro}</p>
     <ImageCaption
-        title={homePageImage.data.title}
-        medium={homePageImage.data.medium}
-        Dimensions={homePageImage.data.Dimensions}
-        year={homePageImage.data.year}
+        title={image.data.title}
+        medium={image.data.medium}
+        Dimensions={image.data.Dimensions}
+        year={image.data.year}
     />
 </Page>
