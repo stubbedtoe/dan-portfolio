@@ -72,7 +72,10 @@ content:
             type: 'select'
             required: true
             default: 'personal'
-            
+            options:
+              values: [personal, flowers, commissions]
+              multiple: true
+              createable: true
     - name: 'Homepage'
       path: 'src/content/homepage.json'
       type: 'file'
