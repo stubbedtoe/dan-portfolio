@@ -76,6 +76,11 @@ content:
               values: [personal, flowers, commissions]
               multiple: true
               createable: true
+          - name: 'order'
+            label: 'Order'
+            type: 'number'
+            required: true
+            description: 'The order the images will be put in on the portfolio page. Lower will be first. This can be a decimal number if you like'
     - name: 'Works'
       path: 'src/content/portfolio.json'
       type: 'file'
