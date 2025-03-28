@@ -1,18 +1,18 @@
 {
-    "title": "Andrew Seated",
-    "id": "andrew-seated",
-    "medium": "Acrylic on board",
-    "Dimensions": {
-      "width": 120,
-      "height": 120
-    },
-    "year": "2023-06-07",
-    "alt": "A man seated looking to the side with his head resting in his hand",
-    "image": "/src/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg",
-    "active": true,
-    "areaOfInterest": "centre",
-    "category": [
-      "personal"
-    ],
-    "order": 2
-  }
+  "title": "Andrew Seated",
+  "id": "andrew-seated",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 120,
+    "height": 120
+  },
+  "year": "2023-06-07",
+  "alt": "A man seated looking to the side with his head resting in his hand",
+  "image": "/src/images/Andrew Seated - Acrylic on Board - 120cm x 120cm - 2023.jpg",
+  "active": false,
+  "areaOfInterest": "centre",
+  "category": [
+    "personal"
+  ],
+  "order": 2
+}
