@@ -2,6 +2,10 @@
 let { active, href } = Astro.props;
 ---
 
-<a {href} class={`p-1 mr-2 rounded text-sm ${active ? 'bg-amber-700 text-white' : ' bg-gray-200'}`}>
+<a
+    data-astro-history="replace"
+    {href}
+    class={`p-1 mr-2 rounded text-sm ${active ? 'bg-amber-700 text-white' : ' bg-gray-200'}`}
+>
     <slot />
 </a>
