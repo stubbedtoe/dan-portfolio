@@ -63,12 +63,11 @@ const groupExhibitions = exhibitions.filter((e) => e.typeOfExhibition === 'Group
     {
         sortedAwards.length > 0 && (
             <AboutSection heading="Awards">
-                <ul>
+                <ul class="leading-8">
                     {sortedAwards.map(async ({ year, award }) => (
-                        <li>
-                            <span class="font-bold">{new Date(year).getFullYear()}</span>
-                            <br />
-                            {await markdown(award)}
+                        <li class="flex">
+                            <span class="font-bold w-[50px]">{new Date(year).getFullYear()}</span>
+                            <span>{await markdown(award)}</span>
                         </li>
                     ))}
                 </ul>

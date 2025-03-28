@@ -1,10 +1,16 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Image, Picture } from 'astro:assets';
 import Page from '../../layouts/Page.astro';
 import { ClientRouter } from 'astro:transitions';
 
 const works = await getCollection('portfolio');
+
+const { searchParams } = Astro.url;
+
+let visible = 'all';
+if (searchParams.get('q')) {
+}
 ---
 
 <Page title="Portfolio" permalink="/portfolio" description="portfolio" columns={1}>
@@ -23,14 +29,16 @@ const works = await getCollection('portfolio');
         {
             works.map(({ data }, index) => (
                 <a href={`/portfolio/${data.id}`} title={data.title} class="aspect-square" data-astro-prefetch="hover">
-                    <Image
+                    <Picture
                         src={data.image}
                         alt={data.title}
                         priority={index < 6}
-                        layout="full-width"
+                        layout="responsive"
                         background="blurhash"
                         fit="cover"
                         class="mb-4"
+                        widths={[300, 500, 700]}
+                        sizes="(min-width: 650px) 300px, (max-width: 500px) 500px, (max-width: 400px) 700px"
                     />
                 </a>
             ))

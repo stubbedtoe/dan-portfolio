@@ -1,6 +1,6 @@
 ---
 // Component Imports
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import { SITE } from '../config';
 import content from '../content/homepage.json';
 import { getCollection } from 'astro:content';
@@ -22,11 +22,13 @@ const [homePageImage, _] = await getCollection('portfolio');
 
 <Page title="Portrait Painter" {description} {permalink}>
     <style slot="head-slot">
+        picture,
         img {
             height: 100vh;
+            width: 100%;
         }
     </style>
-    <Image
+    <Picture
         inferSize={true}
         src={homePageImage.data.image}
         alt={homePageImage.data.alt}
@@ -34,10 +36,11 @@ const [homePageImage, _] = await getCollection('portfolio');
         background="blurhash"
         fit="contain"
         layout="full-width"
-        class="w-full md:w-1/2"
-        widths={[200, 300, 400]}
-        sizes="(max-width: 399px) 200px, (min-width: 400px) 300px, (min-width: 800px) 400px"
+        pictureAttributes={{ class: 'w-full md:w-1/2 h-screen' }}
+        widths={[600, 800, 1000]}
+        sizes="(max-width: 400px) 800px, (max-width: 600px) 600px, 1000px"
         slot="left-side"
+        formats={['webp', 'jpeg']}
     />
     <p>{content.intro}</p>
     <ImageCaption

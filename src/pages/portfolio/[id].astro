@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import ImageCaption from '../../components/ImageCaption.astro';
 import Page from '../../layouts/Page.astro';
 import { ClientRouter } from 'astro:transitions';
@@ -28,14 +28,14 @@ const year = new Date(painting.data.year).getFullYear().toString();
 
 <Page title={painting.data.title} description="" {permalink}>
     <style slot="head-slot">
+        picture,
         img {
-            max-height: 100vh;
-            max-width: 50%;
-            margin: auto 0;
+            height: 100vh;
+            width: 100%;
         }
     </style>
     <ClientRouter slot="head-slot" />
-    <Image
+    <Picture
         inferSize={true}
         src={painting.data.image}
         alt={painting.data.alt}
@@ -43,10 +43,11 @@ const year = new Date(painting.data.year).getFullYear().toString();
         background="blurhash"
         fit="contain"
         layout="full-width"
-        class="w-full md:w-1/2"
-        widths={[200, 300, 400]}
-        sizes="(max-width: 399px) 200px, (min-width: 400px) 300px, (min-width: 800px) 400px"
+        pictureAttributes={{ class: 'w-full md:w-1/2 h-screen' }}
+        widths={[600, 800, 1000]}
+        sizes="(max-width: 400px) 800px, (max-width: 600px) 600px, 1000px"
         slot="left-side"
+        formats={['webp', 'jpeg']}
     />
     <ImageCaption
         title={painting.data.title}

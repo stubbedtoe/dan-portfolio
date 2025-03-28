@@ -8,7 +8,7 @@ interface Props {
 
 type ExhibitionType = 'Solo' | 'Group';
 
-interface Exhibition {
+export interface Exhibition {
     date: string;
     title: string;
     venue: string;
@@ -42,10 +42,9 @@ const processedExhibitions = exhibitions.sort(sortFunction).map(formatDate);
         <AboutSection {heading}>
             <ul>
                 {processedExhibitions.map(({ date, title, venue, link }) => (
-                    <li>
-                        <span class="font-bold">{date},</span>&nbsp;<span class="italic">{title}</span>
-                        <br />
-                        <span>{venue}</span>
+                    <li class="leading-8">
+                        <span class="font-bold">{date}</span>&nbsp;<span class="italic">{title}</span>
+                        <span>{`, ${venue}`}</span>
                         {link && (
                             <>
                                 &nbsp;<a href="link">link</a>
