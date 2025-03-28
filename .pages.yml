@@ -167,6 +167,13 @@ content:
           - name: 'title'
             type: 'string'
             label: 'Title'
+          - name: 'image'
+            type: 'reference'
+            label: 'Homepage image'
+            required: true
+            options:
+                collection: 'Portfolio'
+                label: '{title}'
           - name: 'socials'
             type: 'object'
             label: 'Social media links'
@@ -187,14 +194,7 @@ content:
             type: 'rich-text'
             label: 'Introductory text'
             description: 'To be shown only on the homepage'
-          - name: 'image'
-            type: 'reference'
-            label: 'Homepage image'
-            required: true
-            options:
-                collection: 'Portfolio'
-                label: '{title}'
-                image: './{image}'
+          
     - name: 'Exhibitions'
       path: 'src/content/exhibitions.json'
       type: 'file'
