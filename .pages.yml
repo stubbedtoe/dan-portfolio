@@ -5,7 +5,7 @@ content:
     - name: 'Portfolio'
       type: 'collection'
       path: 'src/content/_portfolio'
-      filename: '{feilds.id}.json'
+      filename: '{fields.id}.json'
       fields:
           - name: 'title'
             type: 'string'
