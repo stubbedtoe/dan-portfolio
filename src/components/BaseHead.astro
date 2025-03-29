@@ -1,6 +1,5 @@
 ---
 import '../styles/global.css';
-import { getImagePath } from 'astro-opengraph-images';
 import content from '../content/homepage.json';
 
 export interface Props {
@@ -8,16 +7,17 @@ export interface Props {
     permalink: string;
 }
 const { title, permalink } = Astro.props;
-const { url, site } = Astro;
-const openGraphImageUrl = getImagePath({ url, site });
+const { site } = Astro;
 const description = content.intro;
 const pageLink = `${site}${permalink}`;
+const ogImage = `${site}/social.png`;
 ---
 
 <!-- Global Metadata -->
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width" />
-<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" href="/favicon.png" sizes="32x32" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" /><!-- 180×180 -->
 
 <!-- Primary Meta Tags -->
 <title>{title}</title>
@@ -29,14 +29,14 @@ const pageLink = `${site}${permalink}`;
 <meta property="og:url" content={pageLink} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
-<meta property="og:image" content={openGraphImageUrl} />
+<meta property="og:image" content={ogImage} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content={pageLink} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={openGraphImageUrl} />
+<meta property="twitter:image" content={ogImage} />
 
 <!-- Analytics -->
 <script type="text/javascript">
