@@ -5,7 +5,7 @@ let { active, href } = Astro.props;
 <a
     data-astro-history="replace"
     {href}
-    class={`p-1 mr-2 rounded text-sm ${active ? 'bg-amber-700 text-white' : ' bg-gray-200'}`}
+    class={`p-1 mr-2 rounded text-sm ${active ? 'bg-amber-900 text-white hover:bg-amber-700' : ' bg-gray-200'}`}
 >
     <slot />
 </a>

@@ -11,6 +11,7 @@ interface Props {
 }
 
 const { classes = '', currentTitle = '', routes } = Astro.props;
+const active = (title: string) => currentTitle.startsWith(title);
 ---
 
 <header
@@ -21,7 +22,13 @@ const { classes = '', currentTitle = '', routes } = Astro.props;
         <ul class="flex gap-3">
             {
                 routes.map(({ title, path }) => (
-                    <li class={currentTitle === title ? 'text-amber-900' : ''}>
+                    <li
+                        class={
+                            active(title)
+                                ? 'text-amber-900 shadow-[0px_1px_0px_0px_var(--color-amber-900)] shadow-amber-900'
+                                : ''
+                        }
+                    >
                         <a href={path}>{title}</a>
                     </li>
                 ))

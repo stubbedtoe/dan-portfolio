@@ -1,15 +1,17 @@
 ---
 import '../styles/global.css';
 import { getImagePath } from 'astro-opengraph-images';
+import content from '../content/homepage.json';
 
 export interface Props {
     title: string;
-    description: string;
     permalink: string;
 }
-const { title, description, permalink } = Astro.props;
+const { title, permalink } = Astro.props;
 const { url, site } = Astro;
 const openGraphImageUrl = getImagePath({ url, site });
+const description = content.intro;
+const pageLink = `${site}${permalink}`;
 ---
 
 <!-- Global Metadata -->
@@ -24,14 +26,14 @@ const openGraphImageUrl = getImagePath({ url, site });
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={permalink} />
+<meta property="og:url" content={pageLink} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={openGraphImageUrl} />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={permalink} />
+<meta property="twitter:url" content={pageLink} />
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={openGraphImageUrl} />

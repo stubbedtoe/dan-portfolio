@@ -23,11 +23,10 @@ export async function getStaticPaths() {
 }
 // 2. For your template, you can get the entry directly from the prop
 const { painting, next, previous } = Astro.props;
-let permalink = 'https://dan-murray-portfolio.netlify.com/';
 const year = new Date(painting.data.year).getFullYear().toString();
 ---
 
-<Page title={painting.data.title} description="" {permalink}>
+<Page title={`Portfolio | ${painting.data.title}`} permalink={`/portfolio/${painting.data.id}`}>
     <style slot="head-slot">
         picture,
         img {

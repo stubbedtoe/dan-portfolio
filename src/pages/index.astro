@@ -6,16 +6,13 @@ import { getCollection } from 'astro:content';
 import ImageCaption from '../components/ImageCaption.astro';
 import Page from '../layouts/Page.astro';
 
-let description = content.intro;
-let permalink = 'https://dan-murray-portfolio.netlify.com/';
-
 const { image: imageTitle } = content;
 
 const portfolio = await getCollection('portfolio');
 const image = portfolio.find(({ data }) => data.title === imageTitle) || portfolio[0];
 ---
 
-<Page title="Portrait Painter" {description} {permalink}>
+<Page title="Portrait Painter" permalink="">
     <style slot="head-slot">
         picture,
         img {

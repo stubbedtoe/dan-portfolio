@@ -8,18 +8,16 @@ import '@fontsource-variable/dm-sans';
 
 interface Props {
     title: string;
-    description: string;
     permalink: string;
     columns?: 1 | 2;
 }
 
-const { title, description, permalink, columns = 2 } = Astro.props;
-const layout = 'sm:flex';
+const { title, permalink, columns = 2 } = Astro.props;
 ---
 
 <html lang="en">
     <head>
-        <BaseHead title={`${content.title} | ${title}`} {description} {permalink} />
+        <BaseHead title={`${content.title} | ${title}`} {permalink} />
         <slot name="head-slot" />
     </head>
     <body class="min-h-screen">
