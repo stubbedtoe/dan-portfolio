@@ -1,18 +1,18 @@
 {
-    "title": "Alan with Manson",
-    "id": "alan-with-mason",
-    "medium": "Acrylic on board",
-    "Dimensions": {
-      "width": 84,
-      "height": 135
-    },
-    "year": "2018-06-07",
-    "alt": "A man with long hair with his hand resting on the black and white do beside him. Both subjects are looking forward.",
-    "image": "/src/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG",
-    "active": true,
-    "areaOfInterest": "centre",
-    "category": [
-      "personal"
-    ],
-    "order": 3
-  }
+  "title": "Alan with Manson",
+  "id": "alan-with-mason",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 84,
+    "height": 135
+  },
+  "year": "2018-06-07",
+  "alt": "A man with long hair with his hand resting on the black and white do beside him. Both subjects are looking forward.",
+  "image": "/src/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG",
+  "active": true,
+  "areaOfInterest": "top",
+  "category": [
+    "personal"
+  ],
+  "order": 3
+}
