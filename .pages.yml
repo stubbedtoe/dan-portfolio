@@ -192,3 +192,11 @@ content:
           - name: 'statement'
             label: 'Artists Statement'
             type: 'rich-text'
+    - name: 'Contact'
+      path: 'src/content/contact.json'
+      type: 'file'
+      fields:
+        - name: 'content'
+          type: 'rich-text'
+          label: 'Content'
+          required: true
