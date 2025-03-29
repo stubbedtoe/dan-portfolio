@@ -34,7 +34,7 @@ const image = portfolio.find(({ data }) => data.title === imageTitle) || portfol
         slot="left-side"
         formats={['webp', 'jpg']}
     />
-    <p>{content.intro}</p>
+    <p id="main-content">{content.intro}</p>
     <ImageCaption
         title={image.data.title}
         medium={image.data.medium}

@@ -14,6 +14,7 @@ interface Props {
         previous: string;
         next: string;
     };
+    id?: string;
 }
 
 const {
@@ -23,6 +24,7 @@ const {
     year,
     links,
     className,
+    id = '',
 } = Astro.props;
 
 const fullyear = new Date(year).getFullYear();
@@ -48,7 +50,7 @@ const fullyear = new Date(year).getFullYear();
     }
 </style>
 
-<div class={`caption ${className || ''}`}>
+<div {id} class={`caption ${className || ''}`}>
     <h2>
         <span class="font-bold">{title}</span>, {fullyear}
     </h2>

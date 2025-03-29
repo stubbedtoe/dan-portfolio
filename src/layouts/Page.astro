@@ -21,6 +21,7 @@ const { title, permalink, columns = 2 } = Astro.props;
         <slot name="head-slot" />
     </head>
     <body class="min-h-screen">
+        <a class="sr-only" href="#main-content">Skip to main content</a>
         <Container>
             <main class="flex w-full min-h-screen">
                 {columns === 2 && <slot name="left-side" />}
