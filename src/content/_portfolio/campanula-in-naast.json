@@ -1,0 +1,18 @@
+{
+  "title": "Campanula in Naast",
+  "id": "campanula-in-naast",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 21,
+    "height": 28
+  },
+  "year": "2024-03-02",
+  "alt": "A violet campanula flower",
+  "image": "/src/images/campanula.jpg",
+  "active": true,
+  "areaOfInterest": "top",
+  "category": [
+    "flowers"
+  ],
+  "order": 13
+}
