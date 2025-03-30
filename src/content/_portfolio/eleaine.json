@@ -1,18 +1,18 @@
 {
-    "title": "Eleaine",
-    "id": "eleaine",
-    "medium": "Acrylic on board",
-    "Dimensions": {
-      "width": 45,
-      "height": 65
-    },
-    "year": "2020-06-09",
-    "alt": "A smiling red-haired woman with glasses in a blue NHS nurse's uniform looking straight ahead.",
-    "image": "/src/images/Eleaine - Acrylic on Board - 45cm x 65cm - 2020.JPG",
-    "active": true,
-    "areaOfInterest": "centre",
-    "category": [
-      "personal"
-    ],
-    "order": 4
-  }
+  "title": "Elaine",
+  "id": "elaine",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 45,
+    "height": 65
+  },
+  "year": "2020-06-09",
+  "alt": "A smiling red-haired woman with glasses in a blue NHS nurse's uniform looking straight ahead.",
+  "image": "/src/images/Eleaine - Acrylic on Board - 45cm x 65cm - 2020.JPG",
+  "active": true,
+  "areaOfInterest": "centre",
+  "category": [
+    "commissions"
+  ],
+  "order": 4
+}
