@@ -35,7 +35,8 @@ const fullyear = new Date(year).getFullYear();
         display: flex;
         justify-content: space-between;
         margin-top: 1rem;
-        max-width: 200px;
+        width: 100%;
+        padding: 3rem 0;
     }
     .caption {
         display: flex;
@@ -47,6 +48,13 @@ const fullyear = new Date(year).getFullYear();
 
     .right {
         transform: rotate(180deg);
+    }
+
+    @media (width >= 48rem) {
+        .links {
+            max-width: 200px;
+            padding: 0;
+        }
     }
 </style>
 

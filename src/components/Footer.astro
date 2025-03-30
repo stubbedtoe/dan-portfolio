@@ -19,7 +19,12 @@ const { classes = '' } = Astro.props;
             socials.map((social) => (
                 <li>
                     <a href={social.url} title={social.website} target="_blank" rel="nofollow noreferrer">
-                        <social.icon class="fill-gray-500 hover:fill-amber-900" width="1rem" height="1rem" />
+                        <social.icon
+                            class="fill-gray-500 hover:fill-amber-900"
+                            width="1rem"
+                            height="1rem"
+                            aria-label={social.website}
+                        />
                     </a>
                 </li>
             ))

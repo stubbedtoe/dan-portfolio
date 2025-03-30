@@ -16,8 +16,16 @@ const image = portfolio.find(({ data }) => data.title === imageTitle) || portfol
     <style slot="head-slot">
         picture,
         img {
-            height: 100vh;
             width: 100%;
+            max-height: calc(100vh - 60px);
+        }
+
+        @media (width >= 48rem) {
+            picture,
+            img {
+                max-height: 100vh;
+                height: 100vh;
+            }
         }
     </style>
     <Picture
@@ -28,13 +36,13 @@ const image = portfolio.find(({ data }) => data.title === imageTitle) || portfol
         background="blurhash"
         fit="contain"
         layout="full-width"
-        pictureAttributes={{ class: 'w-full md:w-1/2 h-screen' }}
+        pictureAttributes={{ class: 'w-full md:w-1/2' }}
         widths={[600, 800, 1000]}
         sizes="(max-width: 400px) 800px, (max-width: 600px) 600px, 1000px"
         slot="left-side"
         formats={['webp', 'jpg']}
     />
-    <p id="main-content">{content.intro}</p>
+    <p class="py-8 md:py-0" id="main-content">{content.intro}</p>
     <ImageCaption
         title={image.data.title}
         medium={image.data.medium}

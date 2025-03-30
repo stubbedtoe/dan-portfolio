@@ -8,26 +8,46 @@ interface Props {
     }[];
     classes?: string;
     currentTitle?: string;
+    checkboxId: string;
 }
 
-const { classes = '', currentTitle = '', routes } = Astro.props;
+const { classes = '', currentTitle = '', routes, checkboxId } = Astro.props;
 const active = (title: string) => currentTitle.startsWith(title);
+const mobileMenuClasses = 'text-xl hover:cursor-pointer hover:text-amber-900';
 ---
 
 <header
-    class={`${classes} font-medium sticky top-0 backdrop-blur-sm flex justify-between w-full pb-8 pt-5 border-b-1 border-gray-500 bg-white/70 z-1`}
+    class={`@container font-medium sticky top-0 backdrop-blur-sm flex justify-between w-full pb-5 md:pb-8 pt-5 md:border-b-1 md:border-gray-500 bg-white/70 z-1 ${classes} `}
 >
     <h1><a href="/">{SITE.title}</a></h1>
-    <nav>
-        <ul class="flex gap-3">
+    <!-- The hamburger menu -->
+
+    <nav class="">
+        <ul class="flex flex-col @md:flex-row gap-3">
+            <input class="peer hidden" id={checkboxId} type="checkbox" />
+            <li class={`peer-checked:hidden ${mobileMenuClasses}`}>
+                <label aria-label="Open menu" for={checkboxId} tabindex="0" class="@md:hidden float-right"
+                    >&#x2630;</label
+                >
+            </li>
+            <li class={`hidden peer-checked:inline ${mobileMenuClasses}`}>
+                <label
+                    aria-label="Close menu"
+                    for={checkboxId}
+                    tabindex="0"
+                    class="@md:hidden float-right peer-checked:inline">&#x2715;</label
+                >
+            </li>
             {
                 routes.map(({ title, path }) => (
                     <li
-                        class={
-                            active(title)
-                                ? 'text-amber-900 shadow-[0px_1px_0px_0px_var(--color-amber-900)] shadow-amber-900'
-                                : ''
-                        }
+                        class={`
+                            hidden peer-checked:inline @md:inline
+                            ${
+                                active(title)
+                                    ? 'text-amber-900 shadow-[0px_1px_0px_0px_var(--color-amber-900)] shadow-amber-900'
+                                    : ''
+                            }`}
                     >
                         <a href={path}>{title}</a>
                     </li>

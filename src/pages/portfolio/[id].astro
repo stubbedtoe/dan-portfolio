@@ -30,8 +30,16 @@ const year = new Date(painting.data.year).getFullYear().toString();
     <style slot="head-slot">
         picture,
         img {
-            height: 100vh;
             width: 100%;
+            max-height: calc(100vh - 60px);
+        }
+
+        @media (width >= 48rem) {
+            picture,
+            img {
+                max-height: 100vh;
+                height: 100vh;
+            }
         }
     </style>
     <ClientRouter slot="head-slot" />
@@ -43,13 +51,14 @@ const year = new Date(painting.data.year).getFullYear().toString();
         background="blurhash"
         fit="contain"
         layout="full-width"
-        pictureAttributes={{ class: 'w-full md:w-1/2 h-screen' }}
+        pictureAttributes={{ class: 'w-full md:w-1/2' }}
         widths={[600, 800, 1000]}
         sizes="(max-width: 400px) 800px, (max-width: 600px) 600px, 1000px"
         slot="left-side"
         formats={['webp', 'jpg']}
     />
     <ImageCaption
+        id="main-content"
         title={painting.data.title}
         medium={painting.data.medium}
         Dimensions={painting.data.Dimensions}
