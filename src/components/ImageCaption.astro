@@ -68,10 +68,20 @@ const fullyear = new Date(year).getFullYear();
         links && (
             <div class="links">
                 <a href={links.previous} title="Previous">
-                    <ArrowLeft class="stroke-gray-500 hover:stroke-amber-900" width="auto" height="1.5rem" />
+                    <ArrowLeft
+                        class="stroke-gray-500 hover:stroke-amber-900"
+                        width="auto"
+                        height="1.5rem"
+                        aria-label="previous"
+                    />
                 </a>
                 <a href={links.next} title="Next">
-                    <ArrowLeft class="right stroke-gray-500 hover:stroke-amber-900" width="auto" height="1.5rem" />
+                    <ArrowLeft
+                        class="right stroke-gray-500 hover:stroke-amber-900"
+                        width="auto"
+                        height="1.5rem"
+                        aria-label="next"
+                    />
                 </a>
             </div>
         )
