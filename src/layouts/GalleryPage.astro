@@ -1,0 +1,60 @@
+---
+import { Picture } from 'astro:assets';
+import Page from './Page.astro';
+import { ClientRouter } from 'astro:transitions';
+import type { Painting } from '../utils/portfolio.mts';
+
+interface Props {
+    category?: string;
+    paintings: Painting[];
+}
+
+const { category, paintings } = Astro.props;
+
+const title = category ? `Portfolio - ${category}` : 'Portfolio';
+const permalink = category ? `/portfolio/${category}` : '/portfolio';
+console.log(permalink);
+---
+
+<Page {title} {permalink} columns={1}>
+    <style slot="head-slot">
+        img {
+            height: auto;
+            aspect-ratio: 1;
+        }
+    </style>
+    <ClientRouter slot="head-slot" />
+
+    {category && <h2 class="capitalize w-full md:w-2/3 mx-auto text-lg my-5">{category}</h2>}
+
+    <div class="portfolio w-full md:w-2/3 sm:columns-2 lg:columns-3 gap-x-4 gap-y-4 m-auto">
+        {
+            paintings.map(({ data }, index) => {
+                // correct american spelling
+                const position = data.areaOfInterest === 'centre' ? 'center' : data.areaOfInterest;
+
+                return (
+                    <a
+                        href={`${permalink}/${data.id}`}
+                        title={data.title}
+                        class="aspect-square"
+                        data-astro-prefetch="hover"
+                    >
+                        <Picture
+                            src={data.image}
+                            alt={data.title}
+                            priority={index < 6}
+                            layout="responsive"
+                            background="blurhash"
+                            fit="cover"
+                            {position}
+                            class={`mb-4 ${position}`}
+                            widths={[300, 500, 700]}
+                            sizes="(min-width: 650px) 300px, (max-width: 500px) 500px, (max-width: 400px) 700px"
+                        />
+                    </a>
+                );
+            })
+        }
+    </div>
+</Page>

@@ -1,19 +1,24 @@
 ---
-// Component Imports
 import { Picture } from 'astro:assets';
-import content from '../content/homepage.json';
-import { getCollection } from 'astro:content';
+import { ClientRouter } from 'astro:transitions';
 import ImageCaption from '../components/ImageCaption.astro';
-import Page from '../layouts/Page.astro';
+import Page from './Page.astro';
+import type { Painting } from '../utils/portfolio.mts';
 
-const { image: imageTitle } = content;
+interface Props {
+    painting: Painting;
+    next: string;
+    previous: string;
+    title: string;
+    permalink: string;
+}
 
-const portfolio = await getCollection('portfolio');
-const image = portfolio.find(({ data }) => data.title === imageTitle) || portfolio[0];
-const year = new Date(image.data.year).getFullYear().toString();
+const { painting, next, previous, title, permalink } = Astro.props;
+const year = new Date(painting.data.year).getFullYear().toString();
+const links = previous === next ? undefined : { previous, next };
 ---
 
-<Page title="Portrait Painter" permalink="">
+<Page {title} {permalink}>
     <style slot="head-slot">
         picture,
         img {
@@ -29,10 +34,11 @@ const year = new Date(image.data.year).getFullYear().toString();
             }
         }
     </style>
+    <ClientRouter slot="head-slot" />
     <Picture
         inferSize={true}
-        src={image.data.image}
-        alt={image.data.alt}
+        src={painting.data.image}
+        alt={painting.data.alt}
         priority={true}
         background="blurhash"
         fit="contain"
@@ -43,6 +49,12 @@ const year = new Date(image.data.year).getFullYear().toString();
         slot="left-side"
         formats={['webp', 'jpg']}
     />
-    <p class="py-8 md:py-0" id="main-content">{content.intro}</p>
-    <ImageCaption title={image.data.title} medium={image.data.medium} Dimensions={image.data.Dimensions} year={year} />
+    <ImageCaption
+        id="main-content"
+        title={painting.data.title}
+        medium={painting.data.medium}
+        Dimensions={painting.data.Dimensions}
+        year={year}
+        {links}
+    />
 </Page>

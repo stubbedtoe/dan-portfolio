@@ -1,16 +1,11 @@
 ---
-import { getCollection } from 'astro:content';
-import { Picture } from 'astro:assets';
-import ImageCaption from '../../components/ImageCaption.astro';
-import Page from '../../layouts/Page.astro';
-import { ClientRouter } from 'astro:transitions';
+import PaintingPage from '../../layouts/PaintingPage.astro';
+import { works } from '../../utils/portfolio.mts';
 // 1. Generate a new path for every collection entry
 export async function getStaticPaths() {
-    const works = await getCollection('portfolio', ({ data }) => data.active);
-    const sortedWorks = works.sort((a, b) => a.data.order - b.data.order);
-    const n = sortedWorks.length;
+    const n = works.length;
 
-    return sortedWorks.map((painting, index) => {
+    return works.map((painting, index) => {
         const nextIndex = (index + 1) % n;
         const next = `/portfolio/${works[nextIndex].id}`;
         const prevIndex = index - 1 < 0 ? n - 1 : index - 1;
@@ -23,49 +18,12 @@ export async function getStaticPaths() {
 }
 // 2. For your template, you can get the entry directly from the prop
 const { painting, next, previous } = Astro.props;
-const year = new Date(painting.data.year).getFullYear().toString();
 ---
 
-<Page title={`Portfolio | ${painting.data.title}`} permalink={`/portfolio/${painting.data.id}`}>
-    <style slot="head-slot">
-        picture,
-        img {
-            width: 100%;
-            max-height: calc(100vh - 60px);
-        }
-
-        @media (width >= 48rem) {
-            picture,
-            img {
-                max-height: 100vh;
-                height: 100vh;
-            }
-        }
-    </style>
-    <ClientRouter slot="head-slot" />
-    <Picture
-        inferSize={true}
-        src={painting.data.image}
-        alt={painting.data.alt}
-        priority={true}
-        background="blurhash"
-        fit="contain"
-        layout="full-width"
-        pictureAttributes={{ class: 'w-full md:w-1/2' }}
-        widths={[600, 800, 1000]}
-        sizes="(max-width: 400px) 800px, (max-width: 600px) 600px, 1000px"
-        slot="left-side"
-        formats={['webp', 'jpg']}
-    />
-    <ImageCaption
-        id="main-content"
-        title={painting.data.title}
-        medium={painting.data.medium}
-        Dimensions={painting.data.Dimensions}
-        year={year}
-        links={{
-            previous,
-            next,
-        }}
-    />
-</Page>
+<PaintingPage
+    {painting}
+    {next}
+    {previous}
+    title={`Portfolio | ${painting.data.title}`}
+    permalink={`/portfolio/${painting.data.id}`}
+/>

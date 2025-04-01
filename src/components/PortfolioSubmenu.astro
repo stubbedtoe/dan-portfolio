@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+
+interface Props {
+    active: boolean;
+}
+
+const { active } = Astro.props;
+const works = await getCollection('portfolio', ({ data }) => data.active);
+const categories = works.reduce(
+    (acc, curr) =>
+        curr.data.category.reduce((found, category) => (found.includes(category) ? found : [...found, category]), acc),
+    [] as string[]
+);
+const hasSubmenu = categories.length > 0;
+const buttonLabel = 'Portfolio';
+---
+
+<style>
+    li ul {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        transition: all 0.5s ease;
+        right: 4.5rem;
+        display: none;
+        margin-top: 1px;
+    }
+    li {
+        display: block;
+        transition-duration: 0.5s;
+    }
+    li:hover > ul,
+    li:focus-within > ul,
+    li ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+    li ul li {
+        clear: both;
+        width: 100%;
+    }
+</style>
+
+<li
+    class={`hidden peer-checked:inline @md:inline ${active ? 'text-amber-900 shadow-[0px_1px_0px_0px_var(--color-amber-900)] shadow-amber-900' : ''}`}
+>
+    {
+        hasSubmenu ? (
+            <button aria-haspop="true" class="hover:cursor-pointer hover:text-amber-900" role="button">
+                {buttonLabel}
+            </button>
+        ) : (
+            <a href="/portfolio">{buttonLabel}</a>
+        )
+    }
+    {
+        hasSubmenu && (
+            <ul aria-label="submenu" class="p-3 shadow-md bg-white">
+                {categories.map((category) => (
+                    <li class="py-2">
+                        <a class="text-gray-600 capitalize hover:text-amber-900" href={`/portfolio/${category}`}>
+                            {category}
+                        </a>
+                    </li>
+                ))}
+            </ul>
+        )
+    }
+</li>

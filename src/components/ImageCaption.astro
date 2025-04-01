@@ -26,8 +26,6 @@ const {
     className,
     id = '',
 } = Astro.props;
-
-const fullyear = new Date(year).getFullYear();
 ---
 
 <style>
@@ -60,7 +58,7 @@ const fullyear = new Date(year).getFullYear();
 
 <div {id} class={`caption ${className || ''}`}>
     <h2>
-        <span class="font-bold">{title}</span>, {fullyear}
+        <span class="font-bold">{title}</span>, {year}
     </h2>
     <span class="">{medium}</span>
     {width} x {height} cm

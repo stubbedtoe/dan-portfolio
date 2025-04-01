@@ -1,0 +1,47 @@
+---
+import type { GetStaticPathsResult } from 'astro';
+import PaintingPage from '../../../layouts/PaintingPage.astro';
+import { getCategoryWorks, allCategories } from '../../../utils/portfolio.mts';
+import type { Painting } from '../../../utils/portfolio.mts';
+
+interface Props {
+    painting: Painting;
+    next: string;
+    previous: string;
+    category: string;
+}
+
+export async function getStaticPaths() {
+    let paths: GetStaticPathsResult = [];
+    allCategories.forEach((category) => {
+        const paintings = getCategoryWorks(category);
+        const n = paintings.length;
+
+        paintings.forEach((painting, index) => {
+            const nextIndex = (index + 1) % n;
+            const next = `/portfolio/${category}/${paintings[nextIndex].id}`;
+            const prevIndex = index - 1 < 0 ? n - 1 : index - 1;
+            const previous = `/portfolio/${category}/${paintings[prevIndex].id}`;
+            paths = [
+                ...paths,
+                {
+                    params: { id: painting.id, category },
+                    props: { painting, next, previous, category },
+                },
+            ];
+        });
+    });
+
+    return paths;
+}
+
+const { painting, next, previous, category } = Astro.props;
+---
+
+<PaintingPage
+    {painting}
+    {next}
+    {previous}
+    title={`Portfolio - ${category} | ${painting.data.title}`}
+    permalink={`/portfolio/${category}/${painting.id}`}
+/>

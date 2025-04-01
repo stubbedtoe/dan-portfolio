@@ -3,7 +3,6 @@ import AstroPWA from '@vite-pwa/astro';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import compressor from 'astro-compressor';
-import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,6 +23,4 @@ export default defineConfig({
         prefetchAll: true,
         defaultStrategy: 'viewport',
     },
-
-    adapter: netlify(),
 });

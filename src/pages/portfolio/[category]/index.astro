@@ -1,0 +1,22 @@
+---
+import GalleryPage from '../../../layouts/GalleryPage.astro';
+import { allCategories, getCategoryWorks } from '../../../utils/portfolio.mts';
+
+export async function getStaticPaths() {
+    return allCategories.map((category) => {
+        const paintings = getCategoryWorks(category);
+
+        return {
+            params: { category },
+            props: {
+                category,
+                paintings,
+            },
+        };
+    });
+}
+
+const { category, paintings } = Astro.props;
+---
+
+<GalleryPage {category} {paintings} />

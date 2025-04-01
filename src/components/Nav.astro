@@ -1,5 +1,6 @@
 ---
-import { SITE } from '../config';
+import homepage from '../content/homepage.json';
+import { allCategories as categories } from '../utils/portfolio.mts';
 
 interface Props {
     routes: {
@@ -14,20 +15,49 @@ interface Props {
 const { classes = '', currentTitle = '', routes, checkboxId } = Astro.props;
 const active = (title: string) => currentTitle.startsWith(title);
 const mobileMenuClasses = 'text-xl hover:cursor-pointer hover:text-amber-900';
+
+const hasSubmenu = categories.length > 0;
+const buttonLabel = 'Portfolio';
 ---
+
+<style>
+    li ul {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        transition: all 0.5s ease;
+        display: none;
+    }
+    li {
+        transition-duration: 0.5s;
+    }
+    li:hover > ul,
+    li:focus-within > ul,
+    li ul:hover {
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+    li ul li {
+        clear: both;
+        width: 100%;
+    }
+</style>
 
 <header
     class={`@container font-medium sticky top-0 backdrop-blur-sm flex justify-between w-full pb-5 md:pb-8 pt-5 md:border-b-1 md:border-gray-500 bg-white/70 z-1 ${classes} `}
 >
-    <h1><a href="/">{SITE.title}</a></h1>
-    <!-- The hamburger menu -->
+    <h1><a href="/">{homepage.title}</a></h1>
 
-    <nav class="">
+    <nav role="navigation">
         <ul class="flex flex-col @md:flex-row gap-3">
-            <input class="peer hidden" id={checkboxId} type="checkbox" />
+            <input class="peer hidden" name={checkboxId} id={checkboxId} type="checkbox" />
             <li class={`peer-checked:hidden ${mobileMenuClasses}`}>
-                <label aria-label="Open menu" for={checkboxId} tabindex="0" class="@md:hidden float-right"
-                    >&#x2630;</label
+                <label
+                    aria-label="Open menu"
+                    for={checkboxId}
+                    tabindex="0"
+                    class="@md:hidden float-right hover:cursor-pointer">&#x2630;</label
                 >
             </li>
             <li class={`hidden peer-checked:inline ${mobileMenuClasses}`}>
@@ -35,8 +65,40 @@ const mobileMenuClasses = 'text-xl hover:cursor-pointer hover:text-amber-900';
                     aria-label="Close menu"
                     for={checkboxId}
                     tabindex="0"
-                    class="@md:hidden float-right peer-checked:inline">&#x2715;</label
+                    class="@md:hidden float-right hover:cursor-pointer">&#x2715;</label
                 >
+            </li>
+            <li
+                class={`hidden peer-checked:inline @md:inline ${active('Portfolio') ? 'text-amber-900 shadow-[0px_1px_0px_0px_var(--color-amber-900)] shadow-amber-900' : ''}`}
+            >
+                {
+                    hasSubmenu ? (
+                        <button aria-haspop="true" class="hover:cursor-pointer hover:text-amber-900" role="button">
+                            {buttonLabel}
+                        </button>
+                    ) : (
+                        <a href="/portfolio">{buttonLabel}</a>
+                    )
+                }
+                {
+                    hasSubmenu && (
+                        <ul
+                            aria-label="submenu"
+                            class="p-3 shadow-md bg-white right-[4rem] top-[3.5rem] @md:top-auto @md:right-auto"
+                        >
+                            {categories.map((category) => (
+                                <li class="py-2">
+                                    <a
+                                        class="text-gray-600 capitalize hover:text-amber-900"
+                                        href={`/portfolio/${category}`}
+                                    >
+                                        {category}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    )
+                }
             </li>
             {
                 routes.map(({ title, path }) => (
