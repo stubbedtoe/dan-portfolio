@@ -7,10 +7,12 @@ export interface Props {
     permalink: string;
 }
 const { title, permalink } = Astro.props;
+const removeSlash = permalink.startsWith('/') ? permalink.slice(1) : permalink;
 const { site } = Astro;
 const description = content.intro;
-const pageLink = `${site}${permalink}`;
-const ogImage = `${site}/social.png`;
+const pageLink = `${site}${removeSlash}`;
+
+const ogImage = `${site}social.png`;
 ---
 
 <!-- Global Metadata -->
