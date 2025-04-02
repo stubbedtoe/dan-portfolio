@@ -17,7 +17,7 @@ export default defineConfig({
         plugins: [tailwindcss()],
     },
 
-    site: 'https://dan-murray-portfolio.netlify.app',
+    site: 'https://danmurrayartist.com',
 
     prefetch: {
         prefetchAll: true,
