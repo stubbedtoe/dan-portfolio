@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "private": true,
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "test": "vitest"
+    "test": "vitest",
+    "writeCategories": "npx vite-node ./writePagesConfig.ts"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.2.1",
@@ -22,6 +24,7 @@
   "devDependencies": {
     "@vite-pwa/astro": "^0.5.0",
     "astro": "^5.5.2",
-    "vitest": "^3.0.8"
+    "vitest": "^3.0.8",
+    "yaml": "^2.7.1"
   }
 }

@@ -1,203 +1,234 @@
 media:
-    input: 'src/images'
-    output: '/src/images'
+    input: src/images
+    output: /src/images
 content:
-    - name: 'Portfolio'
-      type: 'collection'
-      path: 'src/content/_portfolio'
+    - name: Portfolio
+      type: collection
+      path: src/content/_portfolio
       filename: '{fields.id}.json'
       view:
-          sort: [order]
-          fields: [order, image, title, category, active]
+          sort:
+              - order
+          fields:
+              - order
+              - image
+              - title
+              - category
+              - active
           primary: id
-          search: [title, category]
+          search:
+              - title
+              - category
           default:
               sort: order
       fields:
-          - name: 'title'
-            type: 'string'
-            label: 'Title'
+          - name: title
+            type: string
+            label: Title
             required: true
-          - name: 'id'
-            type: 'string'
-            label: 'Slug'
-            description: 'This is the url that will be created. It should be unique. Probably best to use the title: make it all lower case and replace spaces with dashes.'
+          - name: id
+            type: string
+            label: Slug
+            description: 'This is the url that will be created. It should be unique.
+                Probably best to use the title: make it all lower case and replace
+                spaces with dashes.'
             pattern:
                 regex: '[a-z0-9]+(?:-[a-z0-9]+)*'
-                message: 'Invalid format: make the title all lower case and replace spaces with dashes'
+                message: 'Invalid format: make the title all lower case and replace spaces with
+                    dashes'
             required: true
-          - name: 'medium'
-            type: 'string'
-            label: 'Medium'
+          - name: medium
+            type: string
+            label: Medium
             required: true
-            default: 'Acrylic on board'
-          - name: 'Dimensions'
-            type: 'object'
+            default: Acrylic on board
+          - name: Dimensions
+            type: object
             fields:
-                - name: 'width'
-                  type: 'number'
-                  description: 'in centimetres'
-                  label: 'Width'
+                - name: width
+                  type: number
+                  description: in centimetres
+                  label: Width
                   required: true
-                - name: 'height'
-                  type: 'number'
-                  description: 'in centimetres'
-                  label: 'Height'
+                - name: height
+                  type: number
+                  description: in centimetres
+                  label: Height
                   required: true
-          - name: 'year'
-            type: 'date'
-            description: "Don't worry about the day and month, just the year it was finished"
-            label: 'Year'
+          - name: year
+            type: date
+            description: Don't worry about the day and month, just the year it was finished
+            label: Year
             required: true
-          - name: 'alt'
-            type: 'string'
-            description: 'Provide a description of the image for people with impaired sight'
-            label: 'Alt text'
+          - name: alt
+            type: string
+            description: Provide a description of the image for people with impaired sight
+            label: Alt text
             required: true
-          - name: 'image'
-            type: 'image'
-            label: 'Image'
+          - name: image
+            type: image
+            label: Image
             required: true
-            description: 'Before uploading an image here or to the "media" section, it is a good idea to compress it using https://squoosh.app/ (just use the default settings)'
-          - name: 'active'
-            type: 'boolean'
+            description: Before uploading an image here or to the "media" section, it is a
+                good idea to compress it using https://squoosh.app/ (just use the
+                default settings)
+          - name: active
+            type: boolean
             default: true
             required: true
-            description: 'Set this field to false if you want to hide the item from the portfolio (but do not want to delete it entirely)'
-          - name: 'areaOfInterest'
-            label: 'Area of Interest'
-            type: 'select'
-            default: 'centre'
+            description: Set this field to false if you want to hide the item from the
+                portfolio (but do not want to delete it entirely)
+          - name: areaOfInterest
+            label: Area of Interest
+            type: select
+            default: centre
             required: true
-            description: 'The portfolio page will crop images. This field tells it where the face/interesting part of the image is so that it does not get cropped'
+            description: The portfolio page will crop images. This field tells it where the
+                face/interesting part of the image is so that it does not get cropped
             options:
-                values: [top, centre, bottom]
-          - name: 'category'
-            label: 'Category'
-            type: 'select'
-            description: 'Start typing to see the categories entered previously. You can also add a new category.'
+                values:
+                    - top
+                    - centre
+                    - bottom
+          - name: order
+            label: Order
+            type: number
             required: true
-            default: 'personal'
+            description: The order the images will be put in on the portfolio page. Lower
+                will be first. This can be a decimal number if you like
+          - name: category
+            label: Category
+            type: select
+            description: Start typing to see the categories entered previously. You can also
+                add a new category.
+            required: true
+            default: personal
             options:
                 multiple: true
                 createable: true
-                values: [personal, commissions, flowers]
-          - name: 'order'
-            label: 'Order'
-            type: 'number'
-            required: true
-            description: 'The order the images will be put in on the portfolio page. Lower will be first. This can be a decimal number if you like'
-    - name: 'Homepage'
-      path: 'src/content/homepage.json'
-      type: 'file'
+                values:
+                    - personal
+                    - flowers
+                    - commissions
+    - name: Homepage
+      path: src/content/homepage.json
+      type: file
       fields:
-          - name: 'title'
-            type: 'string'
-            label: 'Title'
-          - name: 'image'
-            type: 'reference'
-            label: 'Homepage image'
+          - name: title
+            type: string
+            label: Title
+          - name: image
+            type: reference
+            label: Homepage image
             required: true
             options:
-                collection: 'Portfolio'
+                collection: Portfolio
                 label: '{title}'
                 value: '{title}'
-          - name: 'socials'
-            type: 'object'
-            label: 'Social media links'
+          - name: socials
+            type: object
+            label: Social media links
             list: true
             fields:
-                - name: 'website'
-                  type: 'select'
-                  label: 'Website'
+                - name: website
+                  type: select
+                  label: Website
                   required: true
                   options:
                       creatable: true
-                      values: [Facebook, Instagram, X, LinkedIn, Pinterest]
-                - name: 'url'
-                  type: 'string'
-                  label: 'Url'
+                      values:
+                          - Facebook
+                          - Instagram
+                          - X
+                          - LinkedIn
+                          - Pinterest
+                - name: url
+                  type: string
+                  label: Url
                   required: true
-          - name: 'intro'
-            type: 'rich-text'
-            label: 'Introductory text'
-            description: 'To be shown only on the homepage'
-
-    - name: 'Exhibitions'
-      path: 'src/content/exhibitions.json'
-      type: 'file'
+          - name: intro
+            type: rich-text
+            label: Introductory text
+            description: To be shown only on the homepage
+    - name: Exhibitions
+      path: src/content/exhibitions.json
+      type: file
       list: true
       fields:
-          - name: 'date'
-            type: 'date'
-            label: 'Date'
-            description: 'Just the month and year will be shown (this field will be used to order the exhibitions)'
+          - name: date
+            type: date
+            label: Date
+            description: Just the month and year will be shown (this field will be used to
+                order the exhibitions)
             required: true
-          - name: 'title'
-            type: 'string'
-            label: 'Title of the exhibition'
+          - name: title
+            type: string
+            label: Title of the exhibition
             required: true
-          - name: 'venue'
-            type: 'string'
-            label: 'Venue (name of gallery or whatever)'
+          - name: venue
+            type: string
+            label: Venue (name of gallery or whatever)
             required: true
-          - name: 'website'
-            type: 'string'
-            label: 'Link (optional)'
-          - name: 'typeOfExhibition'
-            type: 'select'
-            label: 'Type of exhibition'
-            description: 'This field will be used to group the exhibition items'
+          - name: website
+            type: string
+            label: Link (optional)
+          - name: typeOfExhibition
+            type: select
+            label: Type of exhibition
+            description: This field will be used to group the exhibition items
             required: true
             default: Group
             options:
-                values: [Group, Solo]
-    - name: 'Awards'
-      path: 'src/content/awards.json'
-      type: 'file'
-      icon: 'award'
+                values:
+                    - Group
+                    - Solo
+    - name: Awards
+      path: src/content/awards.json
+      type: file
+      icon: award
       list: true
       fields:
-          - name: 'award'
-            label: 'Award'
-            type: 'rich-text'
+          - name: award
+            label: Award
+            type: rich-text
             required: true
-            description: 'Add the award details here'
-          - name: 'year'
-            type: 'date'
-            label: 'Year'
-            description: 'Just the year will be shown (this field will be used to order the awards)'
+            description: Add the award details here
+          - name: year
+            type: date
+            label: Year
+            description: Just the year will be shown (this field will be used to order the
+                awards)
             required: true
-    - name: 'About'
-      path: 'src/content/about.json'
-      type: 'file'
+    - name: About
+      path: src/content/about.json
+      type: file
       fields:
-          - name: 'images'
-            label: 'Images'
+          - name: images
+            label: Images
             list: true
-            type: 'object'
+            type: object
             fields:
-                - name: 'image'
-                  label: 'Image'
-                  type: 'image'
+                - name: image
+                  label: Image
+                  type: image
                   required: true
-                - name: 'alt'
-                  label: 'Alt Text'
-                  type: 'string'
-                  description: 'Provide a description of the image for people with impaired sight'
+                - name: alt
+                  label: Alt Text
+                  type: string
+                  description: Provide a description of the image for people with impaired sight
                   required: true
-                - name: 'id'
-                  type: 'uuid'
+                - name: id
+                  type: uuid
                   required: true
                   hidden: true
-          - name: 'statement'
-            label: 'Artists Statement'
-            type: 'rich-text'
-    - name: 'Contact'
-      path: 'src/content/contact.json'
-      type: 'file'
+          - name: statement
+            label: Artists Statement
+            type: rich-text
+    - name: Contact
+      path: src/content/contact.json
+      type: file
       fields:
-          - name: 'content'
-            type: 'rich-text'
-            label: 'Content'
+          - name: content
+            type: rich-text
+            label: Content
             required: false
