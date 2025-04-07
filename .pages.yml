@@ -75,12 +75,15 @@ content:
           - name: 'category'
             label: 'Category'
             type: 'select'
+            description: 'Start typing to see the categories entered previously. You can also add a new category.'
             required: true
             default: 'personal'
             options:
-                values: [personal, flowers, commissions]
                 multiple: true
                 createable: true
+                fetch:
+                    url: 'https://danmurrayartist.com/categories.json'
+                    results: categories
           - name: 'order'
             label: 'Order'
             type: 'number'
@@ -121,7 +124,7 @@ content:
             type: 'rich-text'
             label: 'Introductory text'
             description: 'To be shown only on the homepage'
-          
+
     - name: 'Exhibitions'
       path: 'src/content/exhibitions.json'
       type: 'file'
@@ -196,7 +199,7 @@ content:
       path: 'src/content/contact.json'
       type: 'file'
       fields:
-        - name: 'content'
-          type: 'rich-text'
-          label: 'Content'
-          required: false
+          - name: 'content'
+            type: 'rich-text'
+            label: 'Content'
+            required: false

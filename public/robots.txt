@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+https://danmurrayartist.com/sitemap-index.xml
