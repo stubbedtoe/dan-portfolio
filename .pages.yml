@@ -81,11 +81,7 @@ content:
             options:
                 multiple: true
                 createable: true
-                fetch:
-                    url: 'https://danmurrayartist.com/categories.json'
-                    headers:
-                        Access-Control-Allow-Origin: '*'
-                    results: categories
+                values: [personal, commissions, flowers]
           - name: 'order'
             label: 'Order'
             type: 'number'
