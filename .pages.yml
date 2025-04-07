@@ -83,6 +83,8 @@ content:
                 createable: true
                 fetch:
                     url: 'https://danmurrayartist.com/categories.json'
+                    headers:
+                        Access-Control-Allow-Origin: '*'
                     results: categories
           - name: 'order'
             label: 'Order'
