@@ -1,0 +1,18 @@
+{
+  "title": "Clementine Murray",
+  "id": "clementine-murray",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 22,
+    "height": 30
+  },
+  "year": "2018-12-27",
+  "alt": "A baby girl with a full head of hair being held in arms",
+  "image": "/src/images/DSC_0595.JPG",
+  "active": true,
+  "areaOfInterest": "top",
+  "order": 23,
+  "category": [
+    "personal"
+  ]
+}
