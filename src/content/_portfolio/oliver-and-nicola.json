@@ -1,0 +1,18 @@
+{
+  "title": "Oliver and Nicola",
+  "id": "oliver-and-nicola",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 24,
+    "height": 25
+  },
+  "year": "2024-06-28",
+  "alt": "A cat sleeping on the face of a young woman",
+  "image": "/src/images/DSC06783 4 - Copy.jpg",
+  "active": true,
+  "areaOfInterest": "centre",
+  "order": 27,
+  "category": [
+    "commissions"
+  ]
+}
