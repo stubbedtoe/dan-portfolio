@@ -1,0 +1,18 @@
+{
+  "title": "Woman of Substance",
+  "id": "woman-of-substance",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 59,
+    "height": 70
+  },
+  "year": "2018-08-03",
+  "alt": "A woman with a long dreadlocked pleat standing in fron of a brick wall",
+  "image": "/src/images/Woman of Substance - Copy.JPG",
+  "active": true,
+  "areaOfInterest": "top",
+  "order": 21,
+  "category": [
+    "commissions"
+  ]
+}
