@@ -1,0 +1,18 @@
+{
+  "title": "The Doctor",
+  "id": "the-doctor",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 50,
+    "height": 65
+  },
+  "year": "2020-05-03",
+  "alt": "A man sitting a table looking at the camera surrounded by newspapers",
+  "image": "/src/images/DSC_0676 - Copy.JPG",
+  "active": true,
+  "areaOfInterest": "centre",
+  "order": 22,
+  "category": [
+    "commissions"
+  ]
+}
