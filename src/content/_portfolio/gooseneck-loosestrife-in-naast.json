@@ -1,0 +1,18 @@
+{
+  "title": "Gooseneck Loosestrife in Naast",
+  "id": "gooseneck-loosestrife-in-naast",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 23,
+    "height": 30
+  },
+  "year": "2025-01-22",
+  "alt": "A tall white flowered plant with a fly on the side and abstract green and red background",
+  "image": "/src/images/Gooseneck Loostrife.jpg",
+  "active": true,
+  "areaOfInterest": "top",
+  "order": 15,
+  "category": [
+    "flowers"
+  ]
+}
