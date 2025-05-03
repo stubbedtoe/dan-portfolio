@@ -1,0 +1,18 @@
+{
+  "title": "Mellon Charles Gothic",
+  "id": "mellon-charles-gothic",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 60,
+    "height": 85
+  },
+  "year": "2023-02-03",
+  "alt": "A man holding a chainsaw standing next to a seated woman holding a gardening fork in brightly coloured clothes in a garden setting",
+  "image": "/src/images/DSC_0209.jpg",
+  "active": true,
+  "areaOfInterest": "centre",
+  "order": 20,
+  "category": [
+    "personal"
+  ]
+}
