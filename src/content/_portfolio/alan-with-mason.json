@@ -11,8 +11,8 @@
   "image": "/src/images/Alan with Manson - Acrylic on Board - 84cm x 135cm - 2018.JPG",
   "active": true,
   "areaOfInterest": "top",
+  "order": 3,
   "category": [
-    "personal"
-  ],
-  "order": 3
+    "commissions"
+  ]
 }
