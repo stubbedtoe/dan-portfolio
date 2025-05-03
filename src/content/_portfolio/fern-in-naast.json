@@ -10,7 +10,7 @@
   "alt": "A lit up fern with a fark abstract background",
   "image": "/src/images/Fern-NoBorder1 - Copy.jpg",
   "active": true,
-  "areaOfInterest": "top",
+  "areaOfInterest": "centre",
   "order": 16,
   "category": [
     "flowers"
