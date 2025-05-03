@@ -1,0 +1,18 @@
+{
+  "title": "Fern in Naast",
+  "id": "fern-in-naast",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 22,
+    "height": 29
+  },
+  "year": "2025-02-13",
+  "alt": "A lit up fern with a fark abstract background",
+  "image": "/src/images/Fern-NoBorder1 - Copy.jpg",
+  "active": true,
+  "areaOfInterest": "top",
+  "order": 16,
+  "category": [
+    "flowers"
+  ]
+}
