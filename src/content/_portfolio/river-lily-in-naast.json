@@ -1,0 +1,18 @@
+{
+  "title": "River Lily in Naast",
+  "id": "river-lily-in-naast",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 23,
+    "height": 30
+  },
+  "year": "2025-04-04",
+  "alt": "A pink River Lily with abstract mountains and trees in the background",
+  "image": "/src/images/Pink-NoBorder - Copy.jpg",
+  "active": true,
+  "areaOfInterest": "centre",
+  "order": 18,
+  "category": [
+    "flowers"
+  ]
+}
