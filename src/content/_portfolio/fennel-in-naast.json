@@ -1,0 +1,18 @@
+{
+  "title": "Fennel in Naast",
+  "id": "fennel-in-naast",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 23,
+    "height": 30
+  },
+  "year": "2024-11-28",
+  "alt": "A fennel plant with hills in the background",
+  "image": "/src/images/fennel - Copy.jpg",
+  "active": true,
+  "areaOfInterest": "top",
+  "order": 14,
+  "category": [
+    "flowers"
+  ]
+}
