@@ -3,16 +3,16 @@
   "id": "campanula-in-naast",
   "medium": "Acrylic on board",
   "Dimensions": {
-    "width": 21,
-    "height": 28
+    "width": 23,
+    "height": 30
   },
   "year": "2024-03-02",
   "alt": "A violet campanula flower",
   "image": "/src/images/campanula.jpg",
   "active": true,
   "areaOfInterest": "top",
+  "order": 13,
   "category": [
     "flowers"
-  ],
-  "order": 13
+  ]
 }
