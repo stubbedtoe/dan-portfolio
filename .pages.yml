@@ -108,7 +108,7 @@ content:
                 createable: true
                 values:
                     - personal
-                    - flowers
+                    - plants
                     - commissions
     - name: Homepage
       path: src/content/homepage.json
