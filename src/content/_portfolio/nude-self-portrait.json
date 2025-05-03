@@ -1,18 +1,18 @@
 {
-    "title": "Nude Self Portrait",
-    "id": "nude-self-portrait",
-    "medium": "Acrylic on board",
-    "Dimensions": {
-        "width": 81,
-        "height": 170
-    },
-    "year": "2022-06-08",
-    "alt": "A nude man standing and looking upwards. The light is coming from above.",
-    "image": "/src/images/Nude self portrait - Acrylic on Board -  81cm x 170cm - 2022.jpg",
-    "active": true,
-    "areaOfInterest": "top",
-    "category": [
-        "personal"
-    ],
-    "order": 8
+  "title": "Nude Self Portrait",
+  "id": "nude-self-portrait",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 81,
+    "height": 170
+  },
+  "year": "2022-06-08",
+  "alt": "A nude man standing and looking upwards. The light is coming from above.",
+  "image": "/src/images/Nude Self-Portrait.jpg",
+  "active": true,
+  "areaOfInterest": "top",
+  "order": 8,
+  "category": [
+    "personal"
+  ]
 }
