@@ -1,0 +1,18 @@
+{
+  "title": "Mums Hands",
+  "id": "mums-hands",
+  "medium": "Acrylic on board",
+  "Dimensions": {
+    "width": 40,
+    "height": 40
+  },
+  "year": "2018-11-23",
+  "alt": "A womans hands in her lap",
+  "image": "/src/images/Mums Hands.JPG",
+  "active": true,
+  "areaOfInterest": "centre",
+  "order": 26,
+  "category": [
+    "personal"
+  ]
+}
