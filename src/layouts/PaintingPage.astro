@@ -23,6 +23,7 @@ const links = previous === next ? undefined : { previous, next };
         picture,
         img {
             width: 100%;
+            object-fit: contain;
             max-height: calc(100vh - 60px);
         }
 
@@ -40,9 +41,6 @@ const links = previous === next ? undefined : { previous, next };
         src={painting.data.image}
         alt={painting.data.alt}
         priority={true}
-        background="blurhash"
-        fit="contain"
-        layout="full-width"
         pictureAttributes={{ class: 'w-full md:w-1/2' }}
         widths={[600, 800, 1000]}
         sizes="(max-width: 400px) 800px, (max-width: 600px) 600px, 1000px"

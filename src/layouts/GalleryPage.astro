@@ -13,13 +13,13 @@ const { category, paintings } = Astro.props;
 
 const title = category ? `Portfolio - ${category}` : 'Portfolio';
 const permalink = category ? `/portfolio/${category}` : '/portfolio';
-console.log(permalink);
 ---
 
 <Page {title} {permalink} columns={1}>
     <style slot="head-slot">
         img {
             height: auto;
+            object-fit: cover;
             aspect-ratio: 1;
         }
     </style>
@@ -44,11 +44,10 @@ console.log(permalink);
                             src={data.image}
                             alt={data.title}
                             priority={index < 6}
-                            layout="responsive"
-                            background="blurhash"
-                            fit="cover"
-                            {position}
-                            class={`mb-4 ${position}`}
+                            layout="contain"
+                            fit="full-width"
+                            position={position}
+                            class="mb-4 object-(--pos)"
                             widths={[300, 500, 700]}
                             sizes="(min-width: 650px) 300px, (max-width: 500px) 500px, (max-width: 400px) 700px"
                         />
