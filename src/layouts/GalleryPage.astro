@@ -35,7 +35,7 @@ const permalink = category ? `/portfolio/${category}` : '/portfolio';
 
     {category && <h2 class="capitalize w-full md:w-2/3 mx-auto text-lg my-5">{category}</h2>}
 
-    <div class="portfolio w-full md:w-2/3 sm:columns-2 lg:columns-3 gap-x-4 gap-y-4 m-auto">
+    <div class="portfolio w-full grid md:w-2/3 sm:grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-4 m-auto">
         {
             paintings.map(({ data }, index) => {
                 // correct american spelling
