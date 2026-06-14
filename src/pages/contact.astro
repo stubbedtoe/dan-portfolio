@@ -6,9 +6,7 @@ import { markdown } from '@astropub/md';
 
 <Page title="Contact" permalink="/contact" columns={1}>
     <div id="main-content" class="flex flex-col h-full justify-around w-full sm:w-2/3 mx-auto">
-        <article class="mb-5">
-            {await markdown(content.content)}
-        </article>
+        <article class="mb-5" set:html={await markdown(content.content)} />
         <form
             class="flex flex-col w-full max-w-80 gap-3 mx-auto"
             name="contact"

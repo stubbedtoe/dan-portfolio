@@ -55,11 +55,14 @@ const groupExhibitions = exhibitions.filter((e) => e.typeOfExhibition === 'Group
             </div>
         )
     }
-    <div id="main-content" class="w-full flex flex-col justify-around">
+    <div id="main-content" class="w-full grow flex flex-col justify-around">
         {
             about.statement && (
                 <AboutSection heading="Artist's Statement">
-                    <div class="flex-col gap-2">{await markdown(about.statement)}</div>
+                    <div
+                        class="flex-col gap-2"
+                        set:html={about.statement.replace(/\n/g, '<br />')}
+                    />
                 </AboutSection>
             )
         }
@@ -70,7 +73,7 @@ const groupExhibitions = exhibitions.filter((e) => e.typeOfExhibition === 'Group
                         {sortedAwards.map(async ({ year, award }) => (
                             <li class="flex">
                                 <span class="font-bold w-[50px]">{new Date(year).getFullYear()}</span>
-                                <span>{await markdown(award)}</span>
+                                <span set:html={await markdown(award)} />
                             </li>
                         ))}
                     </ul>
