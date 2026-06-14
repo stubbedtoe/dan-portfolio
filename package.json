@@ -17,9 +17,9 @@
         "@astropub/md": "^1.0.0",
         "@fontsource-variable/dm-sans": "^5.2.5",
         "@playform/inline": "^0.1.1",
-        "@tailwindcss/vite": "4.0.9",
+        "@tailwindcss/vite": "^4.3.1",
         "astro-compressor": "^1.0.0",
-        "tailwindcss": "4.0.9"
+        "tailwindcss": "^4.3.1"
     },
     "devDependencies": {
         "astro": "^6.4.6",

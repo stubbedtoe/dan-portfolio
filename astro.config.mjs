@@ -1,20 +1,20 @@
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import compressor from 'astro-compressor';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // https://astro.build/config
 export default defineConfig({
-    integrations: [(await import('@playform/inline')).default(), tailwindcss(), sitemap(), compressor()],
+  integrations: [(await import('@playform/inline')).default(), sitemap(), compressor()],
+  site: 'https://danmurrayartist.com',
 
-    vite: {
-        plugins: [tailwindcss()],
-    },
+  prefetch: {
+      prefetchAll: true,
+      defaultStrategy: 'viewport',
+  },
 
-    site: 'https://danmurrayartist.com',
-
-    prefetch: {
-        prefetchAll: true,
-        defaultStrategy: 'viewport',
-    },
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
