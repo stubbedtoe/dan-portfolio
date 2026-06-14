@@ -32,25 +32,31 @@ const permalink = category ? `/portfolio/${category}` : '/portfolio';
             object-position: bottom;
         }
 
+        .contained {
+            width: 100%;
+            margin: 0 auto;
+        }
+
         .portfolio {
             columns: 2;
             column-gap: 1rem;
-            width: 100%;
-            margin: 0 auto;
         }
 
         @media (width >= 48rem) {
             .portfolio {
                 columns: 3;
+            }
+
+            .contained {
                 width: calc((100% / 3) * 2);
             }
         }
     </style>
     <ClientRouter slot="head-slot" />
 
-    {category && <h2 class="capitalize w-full md:w-2/3 mx-auto text-lg my-5">{category}</h2>}
+    {category && <h2 class="capitalize contained w-full md:w-2/3 mx-auto text-lg my-5">{category}</h2>}
 
-    <div class="portfolio w-full md:w-2/3 m-auto">
+    <div class="portfolio contained w-full md:w-2/3 m-auto">
         {
             paintings.map(({ data }, index) => {
                 // correct american spelling
