@@ -38,6 +38,8 @@ const groupExhibitions = exhibitions.filter((e) => e.typeOfExhibition === 'Group
         #main-content {
             display: flex;
             flex-direction: column;
+            height: 100%;
+            justify-content: space-around;
         }
     </style>
     {
@@ -60,7 +62,7 @@ const groupExhibitions = exhibitions.filter((e) => e.typeOfExhibition === 'Group
             </div>
         )
     }
-    <div id="main-content" class="w-full grow flex flex-col justify-around">
+    <div id="main-content" class="w-full grow flex flex-col justify-around h-full">
         {
             about.statement && (
                 <AboutSection heading="Artist's Statement">
