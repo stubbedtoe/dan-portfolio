@@ -1,82 +1,75 @@
 {
-  "$ref": "#/definitions/portfolio",
-  "definitions": {
-    "portfolio": {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "alt": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string"
+    },
+    "Dimensions": {
       "type": "object",
       "properties": {
-        "title": {
-          "type": "string"
-        },
-        "alt": {
-          "type": "string"
-        },
-        "id": {
-          "type": "string"
-        },
-        "image": {
-          "type": "string"
-        },
-        "Dimensions": {
-          "type": "object",
-          "properties": {
-            "width": {
-              "type": "number"
-            },
-            "height": {
-              "type": "number"
-            }
-          },
-          "required": [
-            "width",
-            "height"
-          ],
-          "additionalProperties": false
-        },
-        "year": {
-          "type": "string"
-        },
-        "medium": {
-          "type": "string"
-        },
-        "active": {
-          "type": "boolean"
-        },
-        "areaOfInterest": {
-          "type": "string",
-          "enum": [
-            "top",
-            "centre",
-            "bottom"
-          ]
-        },
-        "category": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "order": {
+        "width": {
           "type": "number"
         },
-        "$schema": {
-          "type": "string"
+        "height": {
+          "type": "number"
         }
       },
       "required": [
-        "title",
-        "alt",
-        "id",
-        "image",
-        "Dimensions",
-        "year",
-        "medium",
-        "active",
-        "areaOfInterest",
-        "category",
-        "order"
-      ],
-      "additionalProperties": false
+        "width",
+        "height"
+      ]
+    },
+    "year": {
+      "type": "string"
+    },
+    "medium": {
+      "type": "string"
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "areaOfInterest": {
+      "type": "string",
+      "enum": [
+        "top",
+        "centre",
+        "bottom"
+      ]
+    },
+    "category": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "order": {
+      "type": "number"
+    },
+    "$schema": {
+      "type": "string"
     }
   },
-  "$schema": "http://json-schema.org/draft-07/schema#"
+  "required": [
+    "title",
+    "alt",
+    "id",
+    "image",
+    "Dimensions",
+    "year",
+    "medium",
+    "active",
+    "areaOfInterest",
+    "category",
+    "order"
+  ]
 }
