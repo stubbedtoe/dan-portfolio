@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@source "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}";
+
 @layer components {
     a:hover {
         color: var(--color-amber-900);
