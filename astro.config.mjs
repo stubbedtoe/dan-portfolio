@@ -4,7 +4,7 @@ import compressor from 'astro-compressor';
 
 // https://astro.build/config
 export default defineConfig({
-    integrations: [(await import('@playform/inline')).default(), sitemap(), compressor()],
+    integrations: [sitemap(), compressor()],
     site: 'https://danmurrayartist.com',
 
     prefetch: {
